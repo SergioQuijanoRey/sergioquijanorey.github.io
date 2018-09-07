@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Personal Info
+title: Información personal
 permalink: /personalinfo/
 ---
 
