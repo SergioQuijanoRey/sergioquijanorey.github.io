@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Web personal de Sergio Quijano Rey</title>
-        <link rel="stylesheet" href="./cssTemplates/foghorn.css" type="text/css" media="all" />
-    </head>
-    <body>
-        <h1 id="web-personal-de-sergio-quijano">Web Personal de <strong>Sergio Quijano</strong></h1>
-        <table>
-        <thead>
-        <tr class="header">
-        <th><a href="./blog/blog.html">Blog</a></th>
-        <th><a href="./others/contacto.html">Datos de contacto</a></th>
-        <th><a href="https://github.com/SergioQuijanoRey">Github</a></th>
-        </tr><h1 id="web-personal-de-sergio-quijano">Web Personal de <strong>Sergio Quijano</strong></h1>
-        <table>
-        <thead>
-        <tr class="header">
-        <th><a href="./blog/blog.html">Blog</a></th>
-        <th><a href="./others/contacto.html">Datos de contacto</a></th>
-        <th><a href="https://github.com/SergioQuijanoRey">Github</a></th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-        </table>
-        </thead>
-        <tbody>
-        </tbody>
-        </table>
-        
-    </body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
