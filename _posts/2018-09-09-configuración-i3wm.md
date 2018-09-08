@@ -11,7 +11,14 @@ Entre estos entornos de escritorio, lo he intentado con *kde plasma* que no me t
 
 Así que, cuando ya lo había dado por perdido y estaba a punto de volver a *gnome* por su cierta versatilidad y funcionalidad sin complicaciones, se cruzó en mi camino *i3*, que no es exactamente un entorno de escritorio, sino un gestor de ventanas (*window manager*). No tenía muchas esperanzas en esta alternativa, dado que *i3* tiene una fama (muy desmerecida) de ser extremadamente díficil de usar. Sin embargo, tras unas horas de uso, me enamoró por completo la potencia, versatilidad, grado de configuración y estética limpia y simple de este gestor de ventanas.
 
-# Lo primero, qué es un gestor de ventanas
+# Entorno de Escritorio vs Gestor de ventanas
+
+La primera pregunta que se os puede venir a la mente es,qué es un gestor de ventanas y en qué se diferencia de un entorno de escritorio? 
+
+Saber esto es fundamental a la hora de elegir una alternativa, dependiendo de una serie de factores fundamentales:
+
+* Nuestra experiencia: si eres un usuario que acaba de empezar en el mundo de *linux* lo mejor que puedes es usar un entorno de escritorio que te de los menos problemas posibles
+* Nuestro uso: si 
 
 # Mi configuración
 
