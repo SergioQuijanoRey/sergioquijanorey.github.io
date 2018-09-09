@@ -21,6 +21,7 @@ Saber esto es fundamental a la hora de elegir una alternativa, dependiendo de un
 
 * **Nuestra experiencia**: si eres un usuario que acaba de empezar en el mundo de *linux* lo mejor que puedes es usar un entorno de escritorio que te de los menos problemas posibles. Esto te dará una idea de que programas usar, como configurar ligeramente el entorno de linux...
 * **Nuestro uso**: si solo queremos usar nuestro ordenador para tareas normales como navegar por internet, hacer trabajos para clase o ver series, el esfuerzo que supone utilizar un gestor de ventanas no merece la pena. Sin embargo, si programas a menudo o haces un uso intensivo y profesional del ordenador, el tiempo invertido en configurar tu ordenador será devuelto en unos pocos días, te aseguro que el **aumento de productividad** es espectacular. Y si te interesa lo más mínimo la administración de sistemas, no puedes no usar un gestor de ventanas
+* **Nuestro dominio de la terminal**: si eres de los que no te gusta nada usar una terminal y prefieres un programa con su interfaz gráfica, no te recomiendo usar *i3wm*. Sin embargo, si en tu día a día haces un uso intensivo de esta, no puedo recomendartelo más, pudiendo lanzar una terminal con `$mod+Enter` y pudiendo poner cuantas terminales quieras en la disposición que quieras
 
 # Como empezar
 
