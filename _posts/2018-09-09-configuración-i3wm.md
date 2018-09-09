@@ -58,7 +58,7 @@ Inmediatamente después de instalar *i3wm*, lo más probable es que pienses que 
 **Algunas terminales**:
 ![Captura con terminal](https://raw.githubusercontent.com/SergioQuijanoRey/sergioquijanorey.github.io/master/_imgs/i3_term.png)
 
-**Editar archivos con vim**:
+**Editar archivos con vim**
 ![Captura con editores](https://raw.githubusercontent.com/SergioQuijanoRey/sergioquijanorey.github.io/master/_imgs/i3_editors.png)
 
 # Mi configuración
