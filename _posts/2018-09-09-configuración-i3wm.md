@@ -51,10 +51,12 @@ Inmediatamente después de instalar *i3wm*, lo más probable es que pienses que 
 
 **Algunas capturas de mi escritorio**
 
-![Captura limpia](/_imgs/i3_clean.png)
-![Captura con rofi](/_imgs/i3_rofi.png)
-![Captura con terminal](/_imgs/i3_term.png)
-![Captura con editores](/_imgs/i3_editors.png)
+
+
+![Captura limpia](https://github.com/SergioQuijanoRey/sergioquijanorey.github.io/blob/master/_imgs/i3_clean.png)
+![Captura con rofi](https://github.com/SergioQuijanoRey/sergioquijanorey.github.io/blob/master/_imgs/i3_rofi.png)
+![Captura con terminal](https://github.com/SergioQuijanoRey/sergioquijanorey.github.io/blob/master/_imgs/i3_term.png)
+![Captura con editores](https://github.com/SergioQuijanoRey/sergioquijanorey.github.io/blob/master/_imgs/i3_editors.png)
 
 # Mi configuración
 
