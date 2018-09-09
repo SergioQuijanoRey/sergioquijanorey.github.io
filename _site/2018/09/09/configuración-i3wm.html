@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Mi configuración de i3</title>
-  <meta name="description" content="Mi configuración de i3">
+  <meta name="description" content="Un poco de contexto">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="https://sergioquijanorey.github.io/2018/09/09/configuraci%C3%B3n-i3wm.html">
@@ -62,7 +62,7 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h1 id="mi-configuración-de-i3">Mi configuración de i3</h1>
+    <h1 id="un-poco-de-contexto">Un poco de contexto</h1>
 
 <p>Este verano he estado experimentando con unos cuantos entornos de escritorios distintos. Siempre he usado <em>gnome</em> dado que es el entorno de escritorio que trae por defecto <em>Ubuntu</em>, y hasta que no sales de esa primera configuración no entiendes los problemas que trae una configuración linux alternativa que no tiene todas las cosas preparadas.</p>
 
@@ -74,14 +74,67 @@
 
 <p>La primera pregunta que se os puede venir a la mente es,qué es un gestor de ventanas y en qué se diferencia de un entorno de escritorio?</p>
 
+<p>Para hacerlo simple, un gestor de ventanas es un programa que te permite manejar la posición de las ventanas. Y solo eso, no trae ningún añadido más. Si quieres alguna utilidad más la has de instalar, integrar con el gestor de ventanas, y configurar, tú mismo. Un entorno de escritorio es eso, un entorno completo. Es decir, un gestor de ventanas, un navegador web, animaciones en el sistema, configuración de redes, navegador de archivos, etc… Instalar y listo para usar. Por esto precisamente, en un entorno de escritorio en general no puedes configurar todos los elementos del sistema, mientras que con un gestor de ventanas, no es una opción, sino una necesidad.</p>
+
 <p>Saber esto es fundamental a la hora de elegir una alternativa, dependiendo de una serie de factores fundamentales:</p>
 
 <ul>
-  <li>Nuestra experiencia: si eres un usuario que acaba de empezar en el mundo de <em>linux</em> lo mejor que puedes es usar un entorno de escritorio que te de los menos problemas posibles</li>
-  <li>Nuestro uso: si</li>
+  <li><strong>Nuestra experiencia</strong>: si eres un usuario que acaba de empezar en el mundo de <em>linux</em> lo mejor que puedes es usar un entorno de escritorio que te de los menos problemas posibles. Esto te dará una idea de que programas usar, como configurar ligeramente el entorno de linux…</li>
+  <li><strong>Nuestro uso</strong>: si solo queremos usar nuestro ordenador para tareas normales como navegar por internet, hacer trabajos para clase o ver series, el esfuerzo que supone utilizar un gestor de ventanas no merece la pena. Sin embargo, si programas a menudo o haces un uso intensivo y profesional del ordenador, el tiempo invertido en configurar tu ordenador será devuelto en unos pocos días, te aseguro que el <strong>aumento de productividad</strong> es espectacular. Y si te interesa lo más mínimo la administración de sistemas, no puedes no usar un gestor de ventanas</li>
 </ul>
 
+<h1 id="como-empezar">Como empezar</h1>
+
+<p>Vale, ahora que me he decidido por <em>i3wm</em>, por dónde empiezo? Si ya usas una distribución algo más avanzada, como <em>Arch Linux</em>, <em>Manjaro</em> o <em>Gentoo</em>, seguramente puedas hacer el cambio sin mucho más que leer la documentación y <a href="https://i3wm.org/docs/userguide.html">guía de usuario</a> de <em>i3wm</em>. Sin embargo, seguramente este no sea el caso. Por ejemplo, yo estoy usando <em>Ubuntu 18.04 LTS</em>, cuya instalación no es muy complicada. Esta distribución tan simple nos permitirá concentrarnos en aprender <em>i3wm</em>. Personalmente, recomiendo una serie de vídeos que a mi me enseñaron lo básico. Estos vídeos los puedes encontrar <a href="https://www.youtube.com/watch?v=j1I63wGcvU4&amp;t=3s">aquí</a>. Una vez hecho esto puedes intentar aprender un sistema más avanzado, y seguramente más conveniente para usar <em>i3wm</em>, como puede ser <em>Arch linux</em>. Así que empecemos!</p>
+
+<ol>
+  <li><strong>Instalar <em>Ubuntu</em></strong>: crear un <em>live usb</em> no debería ser muy complicado. Si no sabes, puedes mirar este <a href="https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu">tutorial</a></li>
+  <li><strong>Instalar <em>i3wm</em></strong>: una vez instalado <em>Ubuntu</em>, podemos hacer simplemente desde la terminal un <code class="highlighter-rouge">sudo apt install i3</code>, reiniciar el sistema y en el <em>loggin</em> elegir <code class="highlighter-rouge">i3</code> como entorno.</li>
+  <li><strong>Iniciar el sistema y conocer las combinaciones de teclas</strong>: al iniciar <em>i3wm</em> se nos pedirá elegir el <em>modkey</em>. Esta tecla jugará un papel central en las combinaciones de teclado. Si programas, te recomiendo no escoger el <em>Alt</em>, porque entrará en conflicto con muchas combos de editores de código. Lo siguiente es conocer algunas combinaciones de teclas fundamentales, para moverte entre espacios de trabajo, lanzar terminales, aplicaciones… Hecho esto, edita la configuración de <em>i3wm</em> en <code class="highlighter-rouge">~/.i3/config</code>. Para aprender a hacer esto puedes mirar los videos que he recomendado anteriormente o la ya mencionada <a href="https://i3wm.org/docs/userguide.html">guía de usuario de <em>i3wm</em></a></li>
+  <li><strong>Instalar algunos programas básicos para el sistema</strong>: Esto parece algo tonto para alguien que viene de <em>Ubuntu</em> o similar, pero en <em>i3wm</em> muchos programas no funcionarán como en un entorno de escritorio. Algunos ejemplos son:
+    <ul>
+      <li>Control de volumen: recomiendo usar <em>pavucontrol</em></li>
+      <li>Configuración de bluetooth: recomiendo usar <em>blueman</em></li>
+      <li>Editores de texto: en <em>i3wm</em> merece la pena invertir tiempo en aprender un editor de terminal, mi recomendación es <em>vim</em>. Si no te convence, puedes instalar <em>atom</em> o <em>vs code</em>.</li>
+      <li>Lanzador de aplicaciones: por defecto viene instalado <em>dmenu</em>, pero claramente su competidor <em>rofi</em> es una mejor alternativa.</li>
+      <li>Aparencia: algunos temas <em>GTK</em> como <em>POP!</em> de <em>System76</em> o <em>Arc theme</em>, así como <em>lxappearence</em> para configurar estos temas. Algunas fuentes como <em>Font awesome</em> para los iconos o <em>System San Francisco</em>, imitando a las fuentes de <em>MACOSX</em>.</li>
+      <li>Barra de estado: recomiendo <em>i3blocks</em> por ser sencillamente configurable</li>
+      <li>Seleccionar un fondo de pantalla: yo uso <em>feh</em> para elegir un fondo de pantalla que rota con el tiempo</li>
+    </ul>
+  </li>
+  <li><strong>Configurar completamente el sistema</strong>: algunas de las cosas que deberíamos confirar son:
+    <ul>
+      <li><code class="highlighter-rouge">~/.i3/config</code>: desde aquí podemos configurar los espacios de trabajo, combinaciones de teclado, programas que se lanzan al inicio, barra del sistema,
+ lanzador de aplicaciones…</li>
+      <li>Configurar <em>i3bar</em> desde <code class="highlighter-rouge">~/.i3/i3blocks.conf</code>: como mostrar la hora, batería, memoria del sistema, conexión a internet, fecha… Y sobre todo, que aspecto darle</li>
+      <li>Elegir un tema para <em>rofi</em>: descargar un archivo <code class="highlighter-rouge">.rasi</code> y seleccionarlo desde la configuración de <em>i3wm</em></li>
+      <li>Crear un script para utilizar <em>feh</em> que escoja un fondo de escritorio rotativo (efecto diapositiva)</li>
+    </ul>
+  </li>
+  <li><strong>Empezar a ser productivo</strong>: una vez que estés cómodo con la configuración y el sistema, notarás un aumento de productividad que te dejará alucinado. Te aseguro que si llegas a este punto nunca volverás a usar un entorno de escritorio</li>
+</ol>
+
+<h1 id="mi-escritorio">Mi escritorio</h1>
+
+<p>Inmediatamente después de instalar <em>i3wm</em>, lo más probable es que pienses que es horriblemente feo. Pero con un poco de configuración, puede quedar algo tan bonito como lo siguiente:</p>
+
+<p><strong>Algunas capturas de mi escritorio</strong></p>
+
+<p><img src="/_imgs/i3_clean.png" alt="Captura limpia" />
+<img src="/_imgs/i3_rofi.png" alt="Captura con rofi" />
+<img src="/_imgs/i3_term.png" alt="Captura con terminal" />
+<img src="/_imgs/i3_editors.png" alt="Captura con editores" /></p>
+
 <h1 id="mi-configuración">Mi configuración</h1>
+
+<p>Bien, ahora llega la parte más interesante, las configuraciones que yo uso y que dan como resultado el sistema que ya os he enseñado. Auí podeis ver:</p>
+
+<ul>
+  <li>Mi configuración de <em>i3wm</em></li>
+  <li>Mi configuracion de <em>i3blocks</em></li>
+  <li>El tema de rofi que uso</li>
+  <li>Algunos de los scripts más útiles y fundamentales en mi sistema</li>
+</ul>
 
 <p>Tenéis mi configuración en mi página de <em>github</em>: <a href="https://github.com/SergioQuijanoRey/dotfiles">dotfiles</a>. Aquí tenéis mis archivos de configuración, con la estructura de árbol lista para clonar, actualizada al día en el que leáis esto. Incluso si queréis proponer algún cambio al código. De todas formas, los archivos de configuración que uso son los siguientes:</p>
 

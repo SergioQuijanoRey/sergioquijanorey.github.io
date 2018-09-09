@@ -3,7 +3,7 @@ layout: post
 title: Mi configuración de i3
 ---
 
-# Mi configuración de i3
+# Un poco de contexto
 
 Este verano he estado experimentando con unos cuantos entornos de escritorios distintos. Siempre he usado *gnome* dado que es el entorno de escritorio que trae por defecto *Ubuntu*, y hasta que no sales de esa primera configuración no entiendes los problemas que trae una configuración linux alternativa que no tiene todas las cosas preparadas.
 
@@ -13,14 +13,57 @@ Así que, cuando ya lo había dado por perdido y estaba a punto de volver a *gno
 
 # Entorno de Escritorio vs Gestor de ventanas
 
-La primera pregunta que se os puede venir a la mente es,qué es un gestor de ventanas y en qué se diferencia de un entorno de escritorio? 
+La primera pregunta que se os puede venir a la mente es,qué es un gestor de ventanas y en qué se diferencia de un entorno de escritorio?
+
+Para hacerlo simple, un gestor de ventanas es un programa que te permite manejar la posición de las ventanas. Y solo eso, no trae ningún añadido más. Si quieres alguna utilidad más la has de instalar, integrar con el gestor de ventanas, y configurar, tú mismo. Un entorno de escritorio es eso, un entorno completo. Es decir, un gestor de ventanas, un navegador web, animaciones en el sistema, configuración de redes, navegador de archivos, etc... Instalar y listo para usar. Por esto precisamente, en un entorno de escritorio en general no puedes configurar todos los elementos del sistema, mientras que con un gestor de ventanas, no es una opción, sino una necesidad.
 
 Saber esto es fundamental a la hora de elegir una alternativa, dependiendo de una serie de factores fundamentales:
 
-* Nuestra experiencia: si eres un usuario que acaba de empezar en el mundo de *linux* lo mejor que puedes es usar un entorno de escritorio que te de los menos problemas posibles
-* Nuestro uso: si 
+* **Nuestra experiencia**: si eres un usuario que acaba de empezar en el mundo de *linux* lo mejor que puedes es usar un entorno de escritorio que te de los menos problemas posibles. Esto te dará una idea de que programas usar, como configurar ligeramente el entorno de linux...
+* **Nuestro uso**: si solo queremos usar nuestro ordenador para tareas normales como navegar por internet, hacer trabajos para clase o ver series, el esfuerzo que supone utilizar un gestor de ventanas no merece la pena. Sin embargo, si programas a menudo o haces un uso intensivo y profesional del ordenador, el tiempo invertido en configurar tu ordenador será devuelto en unos pocos días, te aseguro que el **aumento de productividad** es espectacular. Y si te interesa lo más mínimo la administración de sistemas, no puedes no usar un gestor de ventanas
+
+# Como empezar
+
+Vale, ahora que me he decidido por *i3wm*, por dónde empiezo? Si ya usas una distribución algo más avanzada, como *Arch Linux*, *Manjaro* o *Gentoo*, seguramente puedas hacer el cambio sin mucho más que leer la documentación y [guía de usuario](https://i3wm.org/docs/userguide.html) de *i3wm*. Sin embargo, seguramente este no sea el caso. Por ejemplo, yo estoy usando *Ubuntu 18.04 LTS*, cuya instalación no es muy complicada. Esta distribución tan simple nos permitirá concentrarnos en aprender *i3wm*. Personalmente, recomiendo una serie de vídeos que a mi me enseñaron lo básico. Estos vídeos los puedes encontrar [aquí](https://www.youtube.com/watch?v=j1I63wGcvU4&t=3s). Una vez hecho esto puedes intentar aprender un sistema más avanzado, y seguramente más conveniente para usar *i3wm*, como puede ser *Arch linux*. Así que empecemos!
+
+1. **Instalar *Ubuntu***: crear un *live usb* no debería ser muy complicado. Si no sabes, puedes mirar este [tutorial](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu)
+2. **Instalar *i3wm***: una vez instalado *Ubuntu*, podemos hacer simplemente desde la terminal un `sudo apt install i3`, reiniciar el sistema y en el *loggin* elegir `i3` como entorno.
+3. **Iniciar el sistema y conocer las combinaciones de teclas**: al iniciar *i3wm* se nos pedirá elegir el *modkey*. Esta tecla jugará un papel central en las combinaciones de teclado. Si programas, te recomiendo no escoger el *Alt*, porque entrará en conflicto con muchas combos de editores de código. Lo siguiente es conocer algunas combinaciones de teclas fundamentales, para moverte entre espacios de trabajo, lanzar terminales, aplicaciones... Hecho esto, edita la configuración de *i3wm* en `~/.i3/config`. Para aprender a hacer esto puedes mirar los videos que he recomendado anteriormente o la ya mencionada [guía de usuario de *i3wm*](https://i3wm.org/docs/userguide.html)
+4. **Instalar algunos programas básicos para el sistema**: Esto parece algo tonto para alguien que viene de *Ubuntu* o similar, pero en *i3wm* muchos programas no funcionarán como en un entorno de escritorio. Algunos ejemplos son:
+    * Control de volumen: recomiendo usar *pavucontrol*
+    * Configuración de bluetooth: recomiendo usar *blueman*
+    * Editores de texto: en *i3wm* merece la pena invertir tiempo en aprender un editor de terminal, mi recomendación es *vim*. Si no te convence, puedes instalar *atom* o *vs code*.
+    * Lanzador de aplicaciones: por defecto viene instalado *dmenu*, pero claramente su competidor *rofi* es una mejor alternativa.
+    * Aparencia: algunos temas *GTK* como *POP!* de *System76* o *Arc theme*, así como *lxappearence* para configurar estos temas. Algunas fuentes como *Font awesome* para los iconos o *System San Francisco*, imitando a las fuentes de *MACOSX*.
+    * Barra de estado: recomiendo *i3blocks* por ser sencillamente configurable
+    * Seleccionar un fondo de pantalla: yo uso *feh* para elegir un fondo de pantalla que rota con el tiempo
+5. **Configurar completamente el sistema**: algunas de las cosas que deberíamos confirar son:
+    * `~/.i3/config`: desde aquí podemos configurar los espacios de trabajo, combinaciones de teclado, programas que se lanzan al inicio, barra del sistema,
+    lanzador de aplicaciones...
+    * Configurar *i3bar* desde `~/.i3/i3blocks.conf`: como mostrar la hora, batería, memoria del sistema, conexión a internet, fecha... Y sobre todo, que aspecto darle
+    * Elegir un tema para *rofi*: descargar un archivo `.rasi` y seleccionarlo desde la configuración de *i3wm*
+    * Crear un script para utilizar *feh* que escoja un fondo de escritorio rotativo (efecto diapositiva) 
+6. **Empezar a ser productivo**: una vez que estés cómodo con la configuración y el sistema, notarás un aumento de productividad que te dejará alucinado. Te aseguro que si llegas a este punto nunca volverás a usar un entorno de escritorio
+
+# Mi escritorio
+
+Inmediatamente después de instalar *i3wm*, lo más probable es que pienses que es horriblemente feo. Pero con un poco de configuración, puede quedar algo tan bonito como lo siguiente:
+
+**Algunas capturas de mi escritorio**
+
+![Captura limpia](/_imgs/i3_clean.png)
+![Captura con rofi](/_imgs/i3_rofi.png)
+![Captura con terminal](/_imgs/i3_term.png)
+![Captura con editores](/_imgs/i3_editors.png)
 
 # Mi configuración
+
+Bien, ahora llega la parte más interesante, las configuraciones que yo uso y que dan como resultado el sistema que ya os he enseñado. Auí podeis ver:
+
+* Mi configuración de *i3wm*
+* Mi configuracion de *i3blocks*
+* El tema de rofi que uso
+* Algunos de los scripts más útiles y fundamentales en mi sistema
 
 Tenéis mi configuración en mi página de *github*: [dotfiles](https://github.com/SergioQuijanoRey/dotfiles). Aquí tenéis mis archivos de configuración, con la estructura de árbol lista para clonar, actualizada al día en el que leáis esto. Incluso si queréis proponer algún cambio al código. De todas formas, los archivos de configuración que uso son los siguientes:
 
