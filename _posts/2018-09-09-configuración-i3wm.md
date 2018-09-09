@@ -53,10 +53,10 @@ Inmediatamente después de instalar *i3wm*, lo más probable es que pienses que 
 
 
 
-![Captura limpia](https://github.com/SergioQuijanoRey/sergioquijanorey.github.io/blob/master/_imgs/i3_clean.png)
-![Captura con rofi](https://github.com/SergioQuijanoRey/sergioquijanorey.github.io/blob/master/_imgs/i3_rofi.png)
-![Captura con terminal](https://github.com/SergioQuijanoRey/sergioquijanorey.github.io/blob/master/_imgs/i3_term.png)
-![Captura con editores](https://github.com/SergioQuijanoRey/sergioquijanorey.github.io/blob/master/_imgs/i3_editors.png)
+![Captura limpia](https://raw.githubusercontent.com/SergioQuijanoRey/sergioquijanorey.github.io/master/_imgs/i3_clean.png)
+![Captura con rofi](https://raw.githubusercontent.com/SergioQuijanoRey/sergioquijanorey.github.io/master/_imgs/i3_rofi.png)
+![Captura con terminal](https://raw.githubusercontent.com/SergioQuijanoRey/sergioquijanorey.github.io/master/_imgs/i3_term.png)
+![Captura con editores](https://raw.githubusercontent.com/SergioQuijanoRey/sergioquijanorey.github.io/master/_imgs/i3_editors.png)
 
 # Mi configuración
 
