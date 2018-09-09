@@ -6,8 +6,8 @@
 </description>
     <link>https://sergioquijanorey.github.io/</link>
     <atom:link href="https://sergioquijanorey.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Sep 2018 22:54:19 +0200</pubDate>
-    <lastBuildDate>Sun, 09 Sep 2018 22:54:19 +0200</lastBuildDate>
+    <pubDate>Sun, 09 Sep 2018 23:13:01 +0200</pubDate>
+    <lastBuildDate>Sun, 09 Sep 2018 23:13:01 +0200</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -31,6 +31,7 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Nuestra experiencia&lt;/strong&gt;: si eres un usuario que acaba de empezar en el mundo de &lt;em&gt;linux&lt;/em&gt; lo mejor que puedes es usar un entorno de escritorio que te de los menos problemas posibles. Esto te dará una idea de que programas usar, como configurar ligeramente el entorno de linux…&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Nuestro uso&lt;/strong&gt;: si solo queremos usar nuestro ordenador para tareas normales como navegar por internet, hacer trabajos para clase o ver series, el esfuerzo que supone utilizar un gestor de ventanas no merece la pena. Sin embargo, si programas a menudo o haces un uso intensivo y profesional del ordenador, el tiempo invertido en configurar tu ordenador será devuelto en unos pocos días, te aseguro que el &lt;strong&gt;aumento de productividad&lt;/strong&gt; es espectacular. Y si te interesa lo más mínimo la administración de sistemas, no puedes no usar un gestor de ventanas&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Nuestro dominio de la terminal&lt;/strong&gt;: si eres de los que no te gusta nada usar una terminal y prefieres un programa con su interfaz gráfica, no te recomiendo usar &lt;em&gt;i3wm&lt;/em&gt;. Sin embargo, si en tu día a día haces un uso intensivo de esta, no puedo recomendartelo más, pudiendo lanzar una terminal con &lt;code class=&quot;highlighter-rouge&quot;&gt;$mod+Enter&lt;/code&gt; y pudiendo poner cuantas terminales quieras en la disposición que quieras&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;como-empezar&quot;&gt;Como empezar&lt;/h1&gt;
