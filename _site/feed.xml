@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog personal de Sergio Quijano Rey</title>
+    <description>Bienvenido a mi pequeño blog personal! Como puedes ver, sigue en fase de  desarrollo, y no tiene muchas cosas interesantes que puedas ver
+</description>
+    <link>https://sergioquijanorey.github.io/</link>
+    <atom:link href="https://sergioquijanorey.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 09 Sep 2018 01:05:22 +0200</pubDate>
+    <lastBuildDate>Sun, 09 Sep 2018 01:05:22 +0200</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Mi configuración de i3</title>
+        <description>&lt;h1 id=&quot;mi-configuración-de-i3&quot;&gt;Mi configuración de i3&lt;/h1&gt;
+
+&lt;p&gt;Este verano he estado experimentando con unos cuantos entornos de escritorios distintos. Siempre he usado &lt;em&gt;gnome&lt;/em&gt; dado que es el entorno de escritorio que trae por defecto &lt;em&gt;Ubuntu&lt;/em&gt;, y hasta que no sales de esa primera configuración no entiendes los problemas que trae una configuración linux alternativa que no tiene todas las cosas preparadas.&lt;/p&gt;
+
+&lt;p&gt;Entre estos entornos de escritorio, lo he intentado con &lt;em&gt;kde plasma&lt;/em&gt; que no me terminó de convencer por necesitar una excesiva configuración en todos los elementos del escritorio para tener algo bien mínimamente funcional o bien mínimamente bonito. Otro entorno de escritorio, &lt;em&gt;xfce&lt;/em&gt;, me pareció basntante potente, pero había algo que no me terminaba de convencer, y por otro lado, &lt;em&gt;lxde&lt;/em&gt; me pareció simplemente anticuado.&lt;/p&gt;
+
+&lt;p&gt;Así que, cuando ya lo había dado por perdido y estaba a punto de volver a &lt;em&gt;gnome&lt;/em&gt; por su cierta versatilidad y funcionalidad sin complicaciones, se cruzó en mi camino &lt;em&gt;i3&lt;/em&gt;, que no es exactamente un entorno de escritorio, sino un gestor de ventanas (&lt;em&gt;window manager&lt;/em&gt;). No tenía muchas esperanzas en esta alternativa, dado que &lt;em&gt;i3&lt;/em&gt; tiene una fama (muy desmerecida) de ser extremadamente díficil de usar. Sin embargo, tras unas horas de uso, me enamoró por completo la potencia, versatilidad, grado de configuración y estética limpia y simple de este gestor de ventanas.&lt;/p&gt;
+
+&lt;h1 id=&quot;entorno-de-escritorio-vs-gestor-de-ventanas&quot;&gt;Entorno de Escritorio vs Gestor de ventanas&lt;/h1&gt;
+
+&lt;p&gt;La primera pregunta que se os puede venir a la mente es,qué es un gestor de ventanas y en qué se diferencia de un entorno de escritorio?&lt;/p&gt;
+
+&lt;p&gt;Saber esto es fundamental a la hora de elegir una alternativa, dependiendo de una serie de factores fundamentales:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Nuestra experiencia: si eres un usuario que acaba de empezar en el mundo de &lt;em&gt;linux&lt;/em&gt; lo mejor que puedes es usar un entorno de escritorio que te de los menos problemas posibles&lt;/li&gt;
+  &lt;li&gt;Nuestro uso: si&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;mi-configuración&quot;&gt;Mi configuración&lt;/h1&gt;
+
+&lt;p&gt;Tenéis mi configuración en mi página de &lt;em&gt;github&lt;/em&gt;: &lt;a href=&quot;https://github.com/SergioQuijanoRey/dotfiles&quot;&gt;dotfiles&lt;/a&gt;. Aquí tenéis mis archivos de configuración, con la estructura de árbol lista para clonar, actualizada al día en el que leáis esto. Incluso si queréis proponer algún cambio al código. De todas formas, los archivos de configuración que uso son los siguientes:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.i3/config&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-conf highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# i3wm config file
+# Autor:
+#       Sergio Quijano Rey
+#       sergiquijano@gmail.com
+#       https://github.com/SergioQuijanoRey
+# Version:
+#       v1.0: 04/09/2018 - First little rice. The config file is uncleaned
+#       v1.1: 04/09/2018 - Cleaning the config file
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Windows modkey
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Mod4&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Fonts
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;font&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pango&lt;/span&gt;:&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;San&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Francisco&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Display&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;
+ 
+&lt;span class=&quot;c&quot;&gt;# Use Mouse+$mod to drag floating windows to their wanted position
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;floating_modifier&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Launch terminal
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i3&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;sensible&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;terminal&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# kill focused window
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kill&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Rofi menu launcher
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;rofi_theme&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/home/sergio/.i3/rofithemes/flat-blue.rasi&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rofi&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;rofi_theme&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rofi&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;rofi_theme&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# change focus
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;focus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;focus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;down&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;focus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;up&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;ntilde&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;focus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Left&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;focus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Down&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;focus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;down&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Up&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;focus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;up&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Right&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;focus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# move focused window
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;down&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;up&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;ntilde&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Left&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Down&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;down&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Up&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;up&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Right&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Split horizontal and vertical orientation
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;split&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;split&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Fullscreen mode
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fullscreen&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;toggle&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# change container layout (stacked, tabbed, toggle split)
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;layout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stacking&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;w&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;layout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tabbed&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;layout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;toggle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# toggle tiling / floating
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;space&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;floating&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;toggle&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# change focus between tiling / floating windows
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;space&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;focus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mode_toggle&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# focus the parent container
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;focus&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Workspace naming
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace1&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1: Terminal &quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace2&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2: Navigation &quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace3&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;3: Code Editing &quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace4&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;4: Folders &quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace5&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;5: Texting &quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace6&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;6&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace7&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;7&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace8&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;8&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace9&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;9&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace10&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;10: Music &quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# switch to workspace
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace2&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace3&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace4&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace5&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace6&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace7&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace8&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;9&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace9&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace10&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# move focused container to workspace
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace2&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace3&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace4&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace5&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace6&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace7&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;8&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace8&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;9&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace9&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace10&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Forcing apps on workspaces
+# Web apps
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt; [&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;s2&quot;&gt;&quot;Firefox&quot;&lt;/span&gt;] $&lt;span class=&quot;n&quot;&gt;workspace2&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt; [&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;s2&quot;&gt;&quot;Google-chrome&quot;&lt;/span&gt;] $&lt;span class=&quot;n&quot;&gt;workspace2&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Coding apps
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt; [&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;s2&quot;&gt;&quot;Atom&quot;&lt;/span&gt;] $&lt;span class=&quot;n&quot;&gt;workspace3&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt; [&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;s2&quot;&gt;&quot;Code&quot;&lt;/span&gt;] $&lt;span class=&quot;n&quot;&gt;workspace3&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt; [&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;s2&quot;&gt;&quot;Gedit&quot;&lt;/span&gt;] $&lt;span class=&quot;n&quot;&gt;workspace3&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# File apps
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt; [&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;s2&quot;&gt;&quot;Nautilus&quot;&lt;/span&gt;] $&lt;span class=&quot;n&quot;&gt;workspace4&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Texting apps
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt; [&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;s2&quot;&gt;&quot;TelegramDesktop&quot;&lt;/span&gt;] $&lt;span class=&quot;n&quot;&gt;workspace5&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt; [&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;s2&quot;&gt;&quot;whatsapp-desktop&quot;&lt;/span&gt;] $&lt;span class=&quot;n&quot;&gt;workspace5&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Music apps
+#assign [class=&quot;Spotify&quot;] $workspace10
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;for_window&lt;/span&gt; [&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;s2&quot;&gt;&quot;Spotify&quot;&lt;/span&gt;] &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;workspace10&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# reload the configuration file
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reload&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;restart&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# exit i3 (logs you out of your X session)
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;i3-nagbar -t warning -m &#39;You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.&#39; -b &#39;Yes, exit i3&#39; &#39;i3-msg exit&#39;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Resize windows
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;resize&quot;&lt;/span&gt; {
+        &lt;span class=&quot;c&quot;&gt;# Vim bindings
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shrink&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ppt&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grow&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ppt&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shrink&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ppt&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ntilde&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grow&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ppt&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# Arrow bindings
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Left&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shrink&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ppt&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Down&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grow&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ppt&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Up&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shrink&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ppt&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Right&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grow&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ppt&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# back to normal: Enter or Escape
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;default&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Escape&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;default&quot;&lt;/span&gt;
+}
+
+&lt;span class=&quot;c&quot;&gt;# Resize binding
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;resize&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Color config
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; 	         &lt;span class=&quot;c&quot;&gt;#2f343f
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;inactive&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#2f343f
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;          &lt;span class=&quot;c&quot;&gt;#f3f4f5
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;inactive&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#676E7D
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;urgent&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;     &lt;span class=&quot;c&quot;&gt;#E53935
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;          &lt;span class=&quot;c&quot;&gt;#5DA8F4
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Window colors
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;focused&lt;/span&gt;          $&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;           $&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;          $&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;          &lt;span class=&quot;c&quot;&gt;#00ff00
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;unfocused&lt;/span&gt;        $&lt;span class=&quot;n&quot;&gt;inactive&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;inactive&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;inactive&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#00ff00
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;focused_inactive&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;inactive&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;inactive&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;inactive&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#00ff00
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;urgent&lt;/span&gt;           $&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;    $&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;   $&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;          &lt;span class=&quot;c&quot;&gt;#00ff00
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# i3wm bar
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt; {
+        &lt;span class=&quot;c&quot;&gt;# Bar program
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;status_command&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i3blocks&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; ~/.&lt;span class=&quot;n&quot;&gt;i3&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;i3blocks&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;conf&lt;/span&gt;
+        
+        &lt;span class=&quot;c&quot;&gt;# Position of the bar
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;
+        
+        &lt;span class=&quot;c&quot;&gt;# Bar colors
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;colors&lt;/span&gt; {
+		&lt;span class=&quot;n&quot;&gt;background&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;
+	    	&lt;span class=&quot;n&quot;&gt;separator&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#757575
+&lt;/span&gt;		&lt;span class=&quot;c&quot;&gt;#                  border             background         text
+&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;focused_workspace&lt;/span&gt;  $&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;          $&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;          $&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;inactive_workspace&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;inactive&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;inactive&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;bg&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;inactive&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;
+	        &lt;span class=&quot;n&quot;&gt;urgent_workspace&lt;/span&gt;   $&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;   $&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;   $&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;
+        }
+}
+
+&lt;span class=&quot;c&quot;&gt;# Pulse Audio controls
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XF86AudioRaiseVolume&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; --&lt;span class=&quot;n&quot;&gt;no&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;startup&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pactl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;sink&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;volume&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; +&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;% &lt;span class=&quot;c&quot;&gt;#increase sound volume
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XF86AudioLowerVolume&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; --&lt;span class=&quot;n&quot;&gt;no&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;startup&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pactl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;sink&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;volume&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; -&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;% &lt;span class=&quot;c&quot;&gt;#decrease sound volume
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XF86AudioMute&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; --&lt;span class=&quot;n&quot;&gt;no&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;startup&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pactl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;set&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;sink&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;mute&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;toggle&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# mute sound
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Sreen brightness controls
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XF86MonBrightnessUp&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xbacklight&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;inc&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# increase screen brightness
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XF86MonBrightnessDown&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xbacklight&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;dec&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# decrease screen brightness
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Touchpad controls
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XF86TouchpadToggle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; /&lt;span class=&quot;n&quot;&gt;home&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;sergio&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;toggletouchpad&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# toggle touchpad
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Music song controls
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XF86AudioPlay&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;play_pause&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XF86AudioPause&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;play_pause&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XF86AudioNext&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;playerctl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;XF86AudioPrev&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;playerctl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;previous&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Personal KeyBindings
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i3lock&lt;/span&gt; --&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;$bg-color&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;firefox&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindym&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;google&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;chrome&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;google&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;chrome&lt;/span&gt; --&lt;span class=&quot;n&quot;&gt;incognito&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsm&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shutdown&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blueman&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Invert scrolling
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exec_always&lt;/span&gt; --&lt;span class=&quot;n&quot;&gt;no&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;startup&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;synclient&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NaturalScrolling&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VertScrollDelta&lt;/span&gt;=-&lt;span class=&quot;m&quot;&gt;113&lt;/span&gt; 
+
+&lt;span class=&quot;c&quot;&gt;# Disable tap while typing
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;syndaemon&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;K&lt;/span&gt; -&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Remove green border on the left
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;for_window&lt;/span&gt; [&lt;span class=&quot;n&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;s2&quot;&gt;&quot;^.*&quot;&lt;/span&gt;] &lt;span class=&quot;n&quot;&gt;border&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pixel&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Apps on start
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exec_always&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;choose_wallpaper&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;exec_always&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compton&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blueman&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;whatsapp&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;telegram&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;.i3/3blocks.conf&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-conf highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;command&lt;/span&gt;=/&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;share&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;i3blocks&lt;/span&gt;/$&lt;span class=&quot;n&quot;&gt;BLOCK_NAME&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;separator_block_width&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;15&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;markup&lt;/span&gt;=&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+&lt;/span&gt;[&lt;span class=&quot;n&quot;&gt;volume&lt;/span&gt;]
+&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;=
+&lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;=&lt;span class=&quot;n&quot;&gt;Master&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#instance=PCM
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;interval&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;command&lt;/span&gt;=/&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;share&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;i3blocks&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;volume&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pulse&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Generic media player support
+#
+# This displays &quot;ARTIST - SONG&quot; if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+&lt;/span&gt;[&lt;span class=&quot;n&quot;&gt;mediaplayer&lt;/span&gt;]
+&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;=
+&lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;=&lt;span class=&quot;n&quot;&gt;spotify&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;interval&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+
+
+&lt;span class=&quot;c&quot;&gt;# Memory usage
+#
+# The type defaults to &quot;mem&quot; if the instance is not specified.
+# [memory]
+# label=MEM
+# separator=false
+# interval=30
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# [memory]
+# label=SWAP
+# instance=swap
+# separator=false
+# interval=30
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+&lt;/span&gt;[&lt;span class=&quot;n&quot;&gt;disk&lt;/span&gt;]
+&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;=
+&lt;span class=&quot;c&quot;&gt;#instance=/mnt/data
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;interval&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;30&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Network interface monitoring
+#
+# If the instance is not specified, use the interface used for default route.
+# The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+&lt;/span&gt;[&lt;span class=&quot;n&quot;&gt;iface&lt;/span&gt;]
+&lt;span class=&quot;c&quot;&gt;#instance=wlan0
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;=
+&lt;span class=&quot;n&quot;&gt;interval&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;separator&lt;/span&gt;=&lt;span class=&quot;n&quot;&gt;false&lt;/span&gt;
+
+[&lt;span class=&quot;n&quot;&gt;wifi&lt;/span&gt;]
+&lt;span class=&quot;c&quot;&gt;#instance=wlp3s0
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;=
+&lt;span class=&quot;n&quot;&gt;interval&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;separator&lt;/span&gt;=&lt;span class=&quot;n&quot;&gt;false&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# [bandwidth]
+# #instance=eth0
+# interval=5
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+# [cpu_usage]
+# label=CPU
+# interval=10
+# min_width=CPU: 100.00%
+#separator=false
+&lt;/span&gt;
+[&lt;span class=&quot;n&quot;&gt;load_average&lt;/span&gt;]
+&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;=
+&lt;span class=&quot;n&quot;&gt;interval&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Battery indicator
+#
+# The battery instance defaults to 0.
+&lt;/span&gt;[&lt;span class=&quot;n&quot;&gt;battery&lt;/span&gt;]
+&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;=
+&lt;span class=&quot;c&quot;&gt;#label=⚡
+#instance=1
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;interval&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;30&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Date Time
+#
+&lt;/span&gt;[&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;]
+&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;=
+&lt;span class=&quot;n&quot;&gt;command&lt;/span&gt;=&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;+%d-%m-%Y | %H:%M:%S&#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;interval&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# OpenVPN support
+#
+# Support multiple VPN, with colors.
+#[openvpn]
+#interval=20
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Temperature
+#
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+#[temperature]
+#label=TEMP
+#interval=10
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#[keyindicator]
+#instance=CAPS
+#interval=once
+#signal=11
+&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#[keyindicator]
+#instance=NUM
+#interval=once
+#signal=11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;.i3/rofithemes/flat-blue.rasi&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-conf highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/**
+ * &lt;span class=&quot;n&quot;&gt;ROFI&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;theme&lt;/span&gt;
+ * &lt;span class=&quot;n&quot;&gt;User&lt;/span&gt;: &lt;span class=&quot;n&quot;&gt;mbfraga&lt;/span&gt;
+ * &lt;span class=&quot;n&quot;&gt;Copyright&lt;/span&gt;: &lt;span class=&quot;n&quot;&gt;Martin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;. &lt;span class=&quot;n&quot;&gt;Fraga&lt;/span&gt;
+ */
+
+/* &lt;span class=&quot;n&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variables&lt;/span&gt; */
+* {
+   &lt;span class=&quot;n&quot;&gt;maincolor&lt;/span&gt;:        &lt;span class=&quot;c&quot;&gt;#5da8f4;
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;highlight&lt;/span&gt;:        &lt;span class=&quot;n&quot;&gt;bold&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#5da8f4;
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;urgentcolor&lt;/span&gt;:      &lt;span class=&quot;c&quot;&gt;#E53935;
+&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;fgwhite&lt;/span&gt;:          &lt;span class=&quot;c&quot;&gt;#cfcfcf;
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;blackdarkest&lt;/span&gt;:     &lt;span class=&quot;c&quot;&gt;#1d1d1d;
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;blackwidget&lt;/span&gt;:      &lt;span class=&quot;c&quot;&gt;#262626;
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;blackentry&lt;/span&gt;:       &lt;span class=&quot;c&quot;&gt;#292929;
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;blackselect&lt;/span&gt;:      &lt;span class=&quot;c&quot;&gt;#303030;
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;darkgray&lt;/span&gt;:         &lt;span class=&quot;c&quot;&gt;#848484;
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;scrollbarcolor&lt;/span&gt;:   &lt;span class=&quot;c&quot;&gt;#505050;
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;font&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;DejaVu Sans Mono Regular 14&quot;&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackdarkest&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;window&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackdarkest&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;anchor&lt;/span&gt;: &lt;span class=&quot;n&quot;&gt;north&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;: &lt;span class=&quot;n&quot;&gt;north&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;offset&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;20&lt;/span&gt;%;
+}
+
+&lt;span class=&quot;n&quot;&gt;mainbox&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackdarkest&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;spacing&lt;/span&gt;:&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;children&lt;/span&gt;: [&lt;span class=&quot;n&quot;&gt;inputbar&lt;/span&gt;, &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;, &lt;span class=&quot;n&quot;&gt;sidebar&lt;/span&gt;, &lt;span class=&quot;n&quot;&gt;listview&lt;/span&gt;];
+}
+
+&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:@&lt;span class=&quot;n&quot;&gt;blackwidget&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;textbox&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:@&lt;span class=&quot;n&quot;&gt;darkgray&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:@&lt;span class=&quot;n&quot;&gt;blackwidget&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;listview&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;fixed&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;n&quot;&gt;false&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;dynamic&lt;/span&gt;: &lt;span class=&quot;n&quot;&gt;true&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;scrollbar&lt;/span&gt;: &lt;span class=&quot;n&quot;&gt;true&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;spacing&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackdarkest&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackentry&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;fgwhite&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;urgent&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackentry&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;urgentcolor&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;active&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackentry&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;maincolor&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selected&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt; {
+    &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackselect&lt;/span&gt;;
+    &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:       @&lt;span class=&quot;n&quot;&gt;fgwhite&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selected&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;urgent&lt;/span&gt; {
+    &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;urgentcolor&lt;/span&gt;;
+    &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:       @&lt;span class=&quot;n&quot;&gt;blackdarkest&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selected&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;active&lt;/span&gt; {
+    &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;maincolor&lt;/span&gt;;
+    &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:       @&lt;span class=&quot;n&quot;&gt;blackdarkest&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alternate&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt; {
+    &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackentry&lt;/span&gt;;
+    &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:       @&lt;span class=&quot;n&quot;&gt;fgwhite&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alternate&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;urgent&lt;/span&gt; {
+    &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackentry&lt;/span&gt;;
+    &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:       @&lt;span class=&quot;n&quot;&gt;urgentcolor&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alternate&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;active&lt;/span&gt; {
+    &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackentry&lt;/span&gt;;
+    &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:       @&lt;span class=&quot;n&quot;&gt;maincolor&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;scrollbar&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackwidget&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;handle&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;darkgray&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;handle&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;sidebar&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackwidget&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackwidget&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:       @&lt;span class=&quot;n&quot;&gt;darkgray&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selected&lt;/span&gt; {
+    &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:       @&lt;span class=&quot;n&quot;&gt;maincolor&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;inputbar&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;blackdarkest&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;spacing&lt;/span&gt;: &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;prompt&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;:&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;: @&lt;span class=&quot;n&quot;&gt;maincolor&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:@&lt;span class=&quot;n&quot;&gt;blackwidget&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;:&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:@&lt;span class=&quot;n&quot;&gt;blackwidget&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:@&lt;span class=&quot;n&quot;&gt;fgwhite&lt;/span&gt;;
+}
+
+&lt;span class=&quot;n&quot;&gt;case&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;indicator&lt;/span&gt; {
+   &lt;span class=&quot;n&quot;&gt;padding&lt;/span&gt;:&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:@&lt;span class=&quot;n&quot;&gt;maincolor&lt;/span&gt;;
+   &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;:@&lt;span class=&quot;n&quot;&gt;blackwidget&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;.i3/scripts/choose_wallpaper&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/python3.6&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# A simple program to make a slide wallpaper on i3-wm&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Some functions&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;choose_random_wallpaper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# The wallpaper img is chosen&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# The same wallpaper is discarded&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;choose_random_wallpaper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;# The i3-wm command is launch&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;feh --bg-scale {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# The data of the wallpaper images&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;img_dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/home/sergio/GitProjects/misArchivos/Fondos_pantalla/LowPoly&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;low_poly_bird.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;low_poly_cat_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;low_poly_cat_2.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;low_poly_colors.jpg&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;minute_change&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# Change the wallpaper every 3 mins&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;seconds_change&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;minute_change&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# The actual algorithm --&amp;gt; Daemon&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;prev_img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;choose_random_wallpaper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# First time a wallpaper has to be chosen&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;last_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;seconds_change&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;prev_img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;choose_random_wallpaper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prev_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;last_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;.i3/scripts/play_pause&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/python3&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Program made for some improvements&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;config_file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/home/sergio/.i3/scripts/play_pause.config&quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;r&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileobj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# State 0 --&amp;gt; esta pausado, hay que reproducir&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# State 1 --&amp;gt; se esta reproduciendo, hay que pausar&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileobj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;playerctl play&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;new_state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;playerctl pause&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;        
+        &lt;span class=&quot;n&quot;&gt;new_state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;playerctl play&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;new_state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ERROR!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;w&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileobj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fileobj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;.i3/scripts/telegram&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Executes telegram desktop app&lt;/span&gt;
+/home/sergio/.telegram/Telegram
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;.i3/scripts/whatsapp&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+/opt/whatsapp-desktop/WhatsApp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;.i3/scripts/toggletouchpad&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;synclient &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;TouchpadOff .*=.*0&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+    &lt;/span&gt;synclient &lt;span class=&quot;nv&quot;&gt;TouchpadOff&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else
+    &lt;/span&gt;synclient &lt;span class=&quot;nv&quot;&gt;TouchpadOff&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0 &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sun, 09 Sep 2018 00:00:00 +0200</pubDate>
+        <link>https://sergioquijanorey.github.io/2018/09/09/configuraci%C3%B3n-i3wm.html</link>
+        <guid isPermaLink="true">https://sergioquijanorey.github.io/2018/09/09/configuraci%C3%B3n-i3wm.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Primer post</title>
+        <description>&lt;p&gt;Hola y bienvenido al primer post de este blog! Como puedes ver, a día de hoy no hay mucho en este blog. Todavía no sé muy bien qué enfoque le voy a dar al blog, porque ha nacido simplemente como un lugar donde hacer pruebas sobre webs y otras cosillas, pero a medida que vaya subiendo cosas supongo que irá cogiendo forma, y con esto un cierto sentido o propósito.&lt;/p&gt;
+
+&lt;p&gt;Me gustaría escribir sobre linux, tutoriales sobre como configurar algunos programas, cómo hacer ciertas tareas de forma eficiente, consejos, mi día a día… Espero que estas cosas que vaya escribiendo os sirvan de algo.&lt;/p&gt;
+
+&lt;p&gt;Sobre mí podeis leer más en mi &lt;a href=&quot;/personalinfo/&quot;&gt;información personal&lt;/a&gt;. Actualmente tengo 19 años y estudio ingeniería informática y matemáticas en la universidad de Granada. Me gustaría acabar trabajando en áreas como &lt;em&gt;big data&lt;/em&gt;, inteligencia artifical o &lt;em&gt;data science&lt;/em&gt;, campos que han sido siempre lugar de intersección de la vanguardia matemática e informática.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 07 Sep 2018 00:00:00 +0200</pubDate>
+        <link>https://sergioquijanorey.github.io/2018/09/07/primer-post.html</link>
+        <guid isPermaLink="true">https://sergioquijanorey.github.io/2018/09/07/primer-post.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
