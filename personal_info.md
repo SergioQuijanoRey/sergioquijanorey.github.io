@@ -18,16 +18,13 @@ permalink: /personalinfo/
     * Cursos 2015-2016, 2016-2017
 * Doble Grado en Ingeniería Informática y Matemáticas
     * Universidad de Grananda, Granada, España
-    * Matrículas de honor en:
-        * Fundamentos de la programación
-        * Metodología de la programación
 
 # Detalles técnicos
 
-* Nivel profesional en *C++*
-* Nivel avanzado en *Python*
+* Nivel medio en *C++*
+* Nivel principiante en *Python*
 * Conocimientos medios en administración de sistemas linux
-* Habilidades matemáticas avanzadas propias del grado en matemáticas
+* Habilidades matemáticas propias del grado en matemáticas
 
 # Información secundaria
 
