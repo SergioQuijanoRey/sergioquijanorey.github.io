@@ -4,11 +4,11 @@
     <title>Blog personal de Sergio Quijano Rey</title>
     <description>Bienvenido a mi pequeño blog personal! Como puedes ver, sigue en fase de  desarrollo, y no tiene muchas cosas interesantes que puedas ver
 </description>
-    <link>https://sergioquijanorey.github.io/</link>
-    <atom:link href="https://sergioquijanorey.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Sep 2018 23:32:12 +0200</pubDate>
-    <lastBuildDate>Sun, 09 Sep 2018 23:32:12 +0200</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 30 Mar 2019 22:45:57 +0100</pubDate>
+    <lastBuildDate>Sat, 30 Mar 2019 22:45:57 +0100</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Mi configuración de i3</title>
@@ -16,9 +16,9 @@
 
 &lt;p&gt;Este verano he estado experimentando con unos cuantos entornos de escritorios distintos. Siempre he usado &lt;em&gt;gnome&lt;/em&gt; dado que es el entorno de escritorio que trae por defecto &lt;em&gt;Ubuntu&lt;/em&gt;, y hasta que no sales de esa primera configuración no entiendes los problemas que trae una configuración linux alternativa que no tiene todas las cosas preparadas.&lt;/p&gt;
 
-&lt;p&gt;Entre estos entornos de escritorio, lo he intentado con &lt;em&gt;kde plasma&lt;/em&gt; que no me terminó de convencer por necesitar una excesiva configuración en todos los elementos del escritorio para tener algo bien mínimamente funcional o bien mínimamente bonito. Otro entorno de escritorio, &lt;em&gt;xfce&lt;/em&gt;, me pareció basntante potente, pero había algo que no me terminaba de convencer, y por otro lado, &lt;em&gt;lxde&lt;/em&gt; me pareció simplemente anticuado.&lt;/p&gt;
+&lt;p&gt;Entre estos entornos de escritorio, lo he intentado con &lt;em&gt;kde plasma&lt;/em&gt; que no me terminó de convencer por necesitar una excesiva configuración en todos los elementos del escritorio para tener algo bien mínimamente funcional o bien mínimamente bonito. Otro entorno de escritorio, &lt;em&gt;xfce&lt;/em&gt;, me pareció bastante potente, pero había algo que no me terminaba de convencer, y por otro lado, &lt;em&gt;lxde&lt;/em&gt; me pareció simplemente anticuado.&lt;/p&gt;
 
-&lt;p&gt;Así que, cuando ya lo había dado por perdido y estaba a punto de volver a &lt;em&gt;gnome&lt;/em&gt; por su cierta versatilidad y funcionalidad sin complicaciones, se cruzó en mi camino &lt;em&gt;i3&lt;/em&gt;, que no es exactamente un entorno de escritorio, sino un gestor de ventanas (&lt;em&gt;window manager&lt;/em&gt;). No tenía muchas esperanzas en esta alternativa, dado que &lt;em&gt;i3&lt;/em&gt; tiene una fama (muy desmerecida) de ser extremadamente díficil de usar. Sin embargo, tras unas horas de uso, me enamoró por completo la potencia, versatilidad, grado de configuración y estética limpia y simple de este gestor de ventanas.&lt;/p&gt;
+&lt;p&gt;Así que, cuando ya lo había dado por perdido y estaba a punto de volver a &lt;em&gt;gnome&lt;/em&gt; por su cierta versatilidad y funcionalidad sin complicaciones, se cruzó en mi camino &lt;em&gt;i3&lt;/em&gt;, que no es exactamente un entorno de escritorio, sino un gestor de ventanas (&lt;em&gt;window manager&lt;/em&gt;). No tenía muchas esperanzas en esta alternativa, dado que &lt;em&gt;i3&lt;/em&gt; tiene una fama (muy desmerecida) de ser extremadamente difícil de usar. Sin embargo, tras unas horas de uso, me enamoró por completo la potencia, versatilidad, grado de configuración y estética limpia y simple de este gestor de ventanas.&lt;/p&gt;
 
 &lt;h1 id=&quot;entorno-de-escritorio-vs-gestor-de-ventanas&quot;&gt;Entorno de Escritorio vs Gestor de ventanas&lt;/h1&gt;
 
@@ -31,7 +31,7 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Nuestra experiencia&lt;/strong&gt;: si eres un usuario que acaba de empezar en el mundo de &lt;em&gt;linux&lt;/em&gt; lo mejor que puedes es usar un entorno de escritorio que te de los menos problemas posibles. Esto te dará una idea de que programas usar, como configurar ligeramente el entorno de linux…&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Nuestro uso&lt;/strong&gt;: si solo queremos usar nuestro ordenador para tareas normales como navegar por internet, hacer trabajos para clase o ver series, el esfuerzo que supone utilizar un gestor de ventanas no merece la pena. Sin embargo, si programas a menudo o haces un uso intensivo y profesional del ordenador, el tiempo invertido en configurar tu ordenador será devuelto en unos pocos días, te aseguro que el &lt;strong&gt;aumento de productividad&lt;/strong&gt; es espectacular. Y si te interesa lo más mínimo la administración de sistemas, no puedes no usar un gestor de ventanas&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Nuestro dominio de la terminal&lt;/strong&gt;: si eres de los que no te gusta nada usar una terminal y prefieres un programa con su interfaz gráfica, no te recomiendo usar &lt;em&gt;i3wm&lt;/em&gt;. Sin embargo, si en tu día a día haces un uso intensivo de esta, no puedo recomendartelo más, pudiendo lanzar una terminal con &lt;code class=&quot;highlighter-rouge&quot;&gt;$mod+Enter&lt;/code&gt; y pudiendo poner cuantas terminales quieras en la disposición que quieras&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Nuestro dominio de la terminal&lt;/strong&gt;: si eres de los que no te gusta nada usar una terminal y prefieres un programa con su interfaz gráfica, no te recomiendo usar &lt;em&gt;i3wm&lt;/em&gt;. Sin embargo, si en tu día a día haces un uso intensivo de esta, no puedo recomendártelo más, pudiendo lanzar una terminal con &lt;code class=&quot;highlighter-rouge&quot;&gt;$mod+Enter&lt;/code&gt; y pudiendo poner cuantas terminales quieras en la disposición que quieras&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;como-empezar&quot;&gt;Como empezar&lt;/h1&gt;
@@ -226,7 +226,7 @@
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;restart&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# exit i3 (logs you out of your X session)
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;i3-nagbar -t warning -m &#39;You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.&#39; -b &#39;Yes, exit i3&#39; &#39;i3-msg exit&#39;&quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bindsym&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;Shift&lt;/span&gt;+&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'&quot;&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# Resize windows
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;resize&quot;&lt;/span&gt; {
@@ -454,7 +454,7 @@
 #
 &lt;/span&gt;[&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;]
 &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;=
-&lt;span class=&quot;n&quot;&gt;command&lt;/span&gt;=&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;+%d-%m-%Y | %H:%M:%S&#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;command&lt;/span&gt;=&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'+%d-%m-%Y | %H:%M:%S'&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;interval&lt;/span&gt;=&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# OpenVPN support
@@ -642,29 +642,29 @@
 
 &lt;p&gt;&lt;strong&gt;.i3/scripts/choose_wallpaper&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/python3.6&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# A simple program to make a slide wallpaper on i3-wm&lt;/span&gt;
-
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/python3.6
+# A simple program to make a slide wallpaper on i3-wm
+&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
 
-&lt;span class=&quot;c&quot;&gt;# Some functions&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;choose_random_wallpaper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# The wallpaper img is chosen&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Some functions
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;choose_random_wallpaper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# The wallpaper img is chosen
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;
 
-    &lt;span class=&quot;c&quot;&gt;# The same wallpaper is discarded&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# The same wallpaper is discarded
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;choose_random_wallpaper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;# The i3-wm command is launch&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;feh --bg-scale {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# The i3-wm command is launch
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;feh --bg-scale {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;
 
-&lt;span class=&quot;c&quot;&gt;# The data of the wallpaper images&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;img_dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/home/sergio/GitProjects/misArchivos/Fondos_pantalla/LowPoly&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# The data of the wallpaper images
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img_dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/home/sergio/GitProjects/misArchivos/Fondos_pantalla/LowPoly&quot;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;&quot;low_poly_bird.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;&quot;low_poly_cat_1.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -672,12 +672,12 @@
     &lt;span class=&quot;s&quot;&gt;&quot;low_poly_colors.jpg&quot;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;minute_change&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# Change the wallpaper every 3 mins&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;seconds_change&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;minute_change&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;minute_change&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Change the wallpaper every 3 mins
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seconds_change&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;minute_change&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;
 
-&lt;span class=&quot;c&quot;&gt;# The actual algorithm --&amp;gt; Daemon&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;prev_img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;choose_random_wallpaper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# First time a wallpaper has to be chosen&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;last_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# The actual algorithm --&amp;gt; Daemon
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prev_img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;choose_random_wallpaper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img_dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# First time a wallpaper has to be chosen
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;last_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -690,17 +690,17 @@
 
 &lt;p&gt;&lt;strong&gt;.i3/scripts/play_pause&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/python3&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Program made for some improvements&lt;/span&gt;
-
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/python3
+# Program made for some improvements
+&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;config_file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/home/sergio/.i3/scripts/play_pause.config&quot;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;r&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileobj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# State 0 --&amp;gt; esta pausado, hay que reproducir&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# State 1 --&amp;gt; se esta reproduciendo, hay que pausar&lt;/span&gt;
-
+    &lt;span class=&quot;c1&quot;&gt;# State 0 --&amp;gt; esta pausado, hay que reproducir
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# State 1 --&amp;gt; se esta reproduciendo, hay que pausar
+&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileobj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
@@ -744,8 +744,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sun, 09 Sep 2018 00:00:00 +0200</pubDate>
-        <link>https://sergioquijanorey.github.io/2018/09/09/configuraci%C3%B3n-i3wm.html</link>
-        <guid isPermaLink="true">https://sergioquijanorey.github.io/2018/09/09/configuraci%C3%B3n-i3wm.html</guid>
+        <link>http://localhost:4000/2018/09/09/configuraci%C3%B3n-i3wm.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/09/09/configuraci%C3%B3n-i3wm.html</guid>
         
         
       </item>
@@ -759,8 +759,8 @@
 &lt;p&gt;Sobre mí podeis leer más en mi &lt;a href=&quot;/personalinfo/&quot;&gt;información personal&lt;/a&gt;. Actualmente tengo 19 años y estudio ingeniería informática y matemáticas en la universidad de Granada. Me gustaría acabar trabajando en áreas como &lt;em&gt;big data&lt;/em&gt;, inteligencia artifical o &lt;em&gt;data science&lt;/em&gt;, campos que han sido siempre lugar de intersección de la vanguardia matemática e informática.&lt;/p&gt;
 </description>
         <pubDate>Fri, 07 Sep 2018 00:00:00 +0200</pubDate>
-        <link>https://sergioquijanorey.github.io/2018/09/07/primer-post.html</link>
-        <guid isPermaLink="true">https://sergioquijanorey.github.io/2018/09/07/primer-post.html</guid>
+        <link>http://localhost:4000/2018/09/07/primer-post.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/09/07/primer-post.html</guid>
         
         
       </item>

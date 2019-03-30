@@ -1,22 +1,25 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# Description:
+#         Blog configuration file
+#         If changes are made, jekyll restart is needed
+# Author:
+#         Sergio Quijano Rey
+#         sergiquijano@gmail.com
+# Version:
+#         v1.0 - 30/03/2019: First documented version
 
 # Site settings
+#===============================================================================
 title: Blog personal de Sergio Quijano Rey
 email: sergiquijano@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Bienvenido a mi pequeño blog personal! Como puedes ver, sigue en fase de 
   desarrollo, y no tiene muchas cosas interesantes que puedas ver
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://sergioquijanorey.github.io" # the base hostname & protocol for your site
+url: "https://sergioquijanorey.github.io"
 twitter_username: SergiQuijano
 github_username:  SergioQuijanoRey
 
 # Build settings
+#===============================================================================
 markdown: kramdown
-
 theme: jekyll-theme-cayman

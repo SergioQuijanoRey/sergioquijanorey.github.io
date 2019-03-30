@@ -10,8 +10,8 @@
   <meta name="description" content="Un poco de contexto">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://sergioquijanorey.github.io/2018/09/09/configuraci%C3%B3n-i3wm.html">
-  <link rel="alternate" type="application/rss+xml" title="Blog personal de Sergio Quijano Rey" href="https://sergioquijanorey.github.io/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/2018/09/09/configuraci%C3%B3n-i3wm.html">
+  <link rel="alternate" type="application/rss+xml" title="Blog personal de Sergio Quijano Rey" href="http://localhost:4000/feed.xml">
 </head>
 
 
@@ -41,8 +41,6 @@
           
         
           
-          <a class="page-link" href="/personalinfo/">Información personal</a>
-          
         
       </div>
     </nav>
@@ -66,9 +64,9 @@
 
 <p>Este verano he estado experimentando con unos cuantos entornos de escritorios distintos. Siempre he usado <em>gnome</em> dado que es el entorno de escritorio que trae por defecto <em>Ubuntu</em>, y hasta que no sales de esa primera configuración no entiendes los problemas que trae una configuración linux alternativa que no tiene todas las cosas preparadas.</p>
 
-<p>Entre estos entornos de escritorio, lo he intentado con <em>kde plasma</em> que no me terminó de convencer por necesitar una excesiva configuración en todos los elementos del escritorio para tener algo bien mínimamente funcional o bien mínimamente bonito. Otro entorno de escritorio, <em>xfce</em>, me pareció basntante potente, pero había algo que no me terminaba de convencer, y por otro lado, <em>lxde</em> me pareció simplemente anticuado.</p>
+<p>Entre estos entornos de escritorio, lo he intentado con <em>kde plasma</em> que no me terminó de convencer por necesitar una excesiva configuración en todos los elementos del escritorio para tener algo bien mínimamente funcional o bien mínimamente bonito. Otro entorno de escritorio, <em>xfce</em>, me pareció bastante potente, pero había algo que no me terminaba de convencer, y por otro lado, <em>lxde</em> me pareció simplemente anticuado.</p>
 
-<p>Así que, cuando ya lo había dado por perdido y estaba a punto de volver a <em>gnome</em> por su cierta versatilidad y funcionalidad sin complicaciones, se cruzó en mi camino <em>i3</em>, que no es exactamente un entorno de escritorio, sino un gestor de ventanas (<em>window manager</em>). No tenía muchas esperanzas en esta alternativa, dado que <em>i3</em> tiene una fama (muy desmerecida) de ser extremadamente díficil de usar. Sin embargo, tras unas horas de uso, me enamoró por completo la potencia, versatilidad, grado de configuración y estética limpia y simple de este gestor de ventanas.</p>
+<p>Así que, cuando ya lo había dado por perdido y estaba a punto de volver a <em>gnome</em> por su cierta versatilidad y funcionalidad sin complicaciones, se cruzó en mi camino <em>i3</em>, que no es exactamente un entorno de escritorio, sino un gestor de ventanas (<em>window manager</em>). No tenía muchas esperanzas en esta alternativa, dado que <em>i3</em> tiene una fama (muy desmerecida) de ser extremadamente difícil de usar. Sin embargo, tras unas horas de uso, me enamoró por completo la potencia, versatilidad, grado de configuración y estética limpia y simple de este gestor de ventanas.</p>
 
 <h1 id="entorno-de-escritorio-vs-gestor-de-ventanas">Entorno de Escritorio vs Gestor de ventanas</h1>
 
@@ -81,7 +79,7 @@
 <ul>
   <li><strong>Nuestra experiencia</strong>: si eres un usuario que acaba de empezar en el mundo de <em>linux</em> lo mejor que puedes es usar un entorno de escritorio que te de los menos problemas posibles. Esto te dará una idea de que programas usar, como configurar ligeramente el entorno de linux…</li>
   <li><strong>Nuestro uso</strong>: si solo queremos usar nuestro ordenador para tareas normales como navegar por internet, hacer trabajos para clase o ver series, el esfuerzo que supone utilizar un gestor de ventanas no merece la pena. Sin embargo, si programas a menudo o haces un uso intensivo y profesional del ordenador, el tiempo invertido en configurar tu ordenador será devuelto en unos pocos días, te aseguro que el <strong>aumento de productividad</strong> es espectacular. Y si te interesa lo más mínimo la administración de sistemas, no puedes no usar un gestor de ventanas</li>
-  <li><strong>Nuestro dominio de la terminal</strong>: si eres de los que no te gusta nada usar una terminal y prefieres un programa con su interfaz gráfica, no te recomiendo usar <em>i3wm</em>. Sin embargo, si en tu día a día haces un uso intensivo de esta, no puedo recomendartelo más, pudiendo lanzar una terminal con <code class="highlighter-rouge">$mod+Enter</code> y pudiendo poner cuantas terminales quieras en la disposición que quieras</li>
+  <li><strong>Nuestro dominio de la terminal</strong>: si eres de los que no te gusta nada usar una terminal y prefieres un programa con su interfaz gráfica, no te recomiendo usar <em>i3wm</em>. Sin embargo, si en tu día a día haces un uso intensivo de esta, no puedo recomendártelo más, pudiendo lanzar una terminal con <code class="highlighter-rouge">$mod+Enter</code> y pudiendo poner cuantas terminales quieras en la disposición que quieras</li>
 </ul>
 
 <h1 id="como-empezar">Como empezar</h1>
@@ -692,29 +690,29 @@
 
 <p><strong>.i3/scripts/choose_wallpaper</strong>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/python3.6</span>
-<span class="c"># A simple program to make a slide wallpaper on i3-wm</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/python3.6
+# A simple program to make a slide wallpaper on i3-wm
+</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
-<span class="c"># Some functions</span>
-<span class="k">def</span> <span class="nf">choose_random_wallpaper</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="n">opts</span><span class="p">,</span> <span class="n">last_img</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
-    <span class="c"># The wallpaper img is chosen</span>
-    <span class="n">opt</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span>
+<span class="c1"># Some functions
+</span><span class="k">def</span> <span class="nf">choose_random_wallpaper</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="n">opts</span><span class="p">,</span> <span class="n">last_img</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+    <span class="c1"># The wallpaper img is chosen
+</span>    <span class="n">opt</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span>
     <span class="n">img</span> <span class="o">=</span> <span class="nb">dir</span> <span class="o">+</span> <span class="s">"/"</span> <span class="o">+</span> <span class="n">opt</span>
 
-    <span class="c"># The same wallpaper is discarded</span>
-    <span class="k">if</span> <span class="n">img</span> <span class="o">==</span> <span class="n">last_img</span><span class="p">:</span>
+    <span class="c1"># The same wallpaper is discarded
+</span>    <span class="k">if</span> <span class="n">img</span> <span class="o">==</span> <span class="n">last_img</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">choose_random_wallpaper</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span> <span class="n">opts</span><span class="p">,</span> <span class="n">last_img</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="c"># The i3-wm command is launch</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">"feh --bg-scale {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">img</span><span class="p">))</span>
+        <span class="c1"># The i3-wm command is launch
+</span>        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">"feh --bg-scale {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">img</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">img</span>
 
-<span class="c"># The data of the wallpaper images</span>
-<span class="n">img_dir</span> <span class="o">=</span> <span class="s">"/home/sergio/GitProjects/misArchivos/Fondos_pantalla/LowPoly"</span>
+<span class="c1"># The data of the wallpaper images
+</span><span class="n">img_dir</span> <span class="o">=</span> <span class="s">"/home/sergio/GitProjects/misArchivos/Fondos_pantalla/LowPoly"</span>
 <span class="n">opts</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s">"low_poly_bird.png"</span><span class="p">,</span>
     <span class="s">"low_poly_cat_1.png"</span><span class="p">,</span>
@@ -722,12 +720,12 @@
     <span class="s">"low_poly_colors.jpg"</span>
 <span class="p">]</span>
 
-<span class="n">minute_change</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c"># Change the wallpaper every 3 mins</span>
-<span class="n">seconds_change</span> <span class="o">=</span> <span class="n">minute_change</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">minute_change</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1"># Change the wallpaper every 3 mins
+</span><span class="n">seconds_change</span> <span class="o">=</span> <span class="n">minute_change</span> <span class="o">*</span> <span class="mi">60</span>
 
-<span class="c"># The actual algorithm --&gt; Daemon</span>
-<span class="n">prev_img</span> <span class="o">=</span> <span class="n">choose_random_wallpaper</span><span class="p">(</span><span class="n">img_dir</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>  <span class="c"># First time a wallpaper has to be chosen</span>
-<span class="n">last_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="c1"># The actual algorithm --&gt; Daemon
+</span><span class="n">prev_img</span> <span class="o">=</span> <span class="n">choose_random_wallpaper</span><span class="p">(</span><span class="n">img_dir</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>  <span class="c1"># First time a wallpaper has to be chosen
+</span><span class="n">last_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
     <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -740,17 +738,17 @@
 
 <p><strong>.i3/scripts/play_pause</strong>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/python3</span>
-<span class="c"># Program made for some improvements</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/python3
+# Program made for some improvements
+</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">config_file</span> <span class="o">=</span> <span class="s">"/home/sergio/.i3/scripts/play_pause.config"</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileobj</span><span class="p">:</span>
-    <span class="c"># State 0 --&gt; esta pausado, hay que reproducir</span>
-    <span class="c"># State 1 --&gt; se esta reproduciendo, hay que pausar</span>
-
+    <span class="c1"># State 0 --&gt; esta pausado, hay que reproducir
+</span>    <span class="c1"># State 1 --&gt; se esta reproduciendo, hay que pausar
+</span>
     <span class="n">state</span> <span class="o">=</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s">"0"</span><span class="p">:</span>
