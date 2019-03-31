@@ -1,5 +1,4 @@
 ---
-layout: "page"
 title: "Información personal"
 permalink: /personalinfo/
 ---

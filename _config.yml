@@ -25,6 +25,11 @@ github_username:  SergioQuijanoRey
 markdown: kramdown
 theme: jekyll-theme-cayman
 
+# Plugins
+#===============================================================================
+plugins:
+        - jekyll-feed
+
 # Default front-matter
 #===============================================================================
 defaults:
@@ -32,5 +37,5 @@ defaults:
                 scope:
                         path: ""
                 values:
-                        layout: post
+                        layout: default
                         author: "Sergio Quijano Rey"
