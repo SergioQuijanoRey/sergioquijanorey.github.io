@@ -2,6 +2,7 @@
 layout: post
 title: Mi configuración de i3
 categories: i3 linux programacion administracion
+date: 2018-09-09
 ---
 
 # Un poco de contexto
