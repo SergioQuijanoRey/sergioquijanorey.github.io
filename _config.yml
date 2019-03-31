@@ -23,9 +23,3 @@ github_username:  SergioQuijanoRey
 #===============================================================================
 markdown: kramdown
 theme: jekyll-theme-cayman
-
-# Plugins
-#===============================================================================
-plugins:
-        -jekyll
-        -cayman

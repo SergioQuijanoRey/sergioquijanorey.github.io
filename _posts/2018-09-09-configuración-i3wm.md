@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Mi configuración de i3
+categories: i3 linux programacion administracion
 ---
 
 # Un poco de contexto
