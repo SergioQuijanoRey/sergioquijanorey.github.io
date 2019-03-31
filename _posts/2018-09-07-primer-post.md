@@ -1,6 +1,6 @@
 ---
-layout: post
-title: Primer post
+layout: "post"
+title: "Primer post"
 date: 2018-09-07
 ---
 

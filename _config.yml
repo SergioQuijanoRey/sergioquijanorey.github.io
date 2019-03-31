@@ -6,6 +6,7 @@
 #         sergiquijano@gmail.com
 # Version:
 #         v1.0 - 30/03/2019: First documented version
+#         v1.1 - 31/03/2019: Default values are added
 
 # Site settings
 #===============================================================================
@@ -23,3 +24,13 @@ github_username:  SergioQuijanoRey
 #===============================================================================
 markdown: kramdown
 theme: jekyll-theme-cayman
+
+# Default front-matter
+#===============================================================================
+defaults:
+        -
+                scope:
+                        path: ""
+                values:
+                        layout: post
+                        author: "Sergio Quijano Rey"
