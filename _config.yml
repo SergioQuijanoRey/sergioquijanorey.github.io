@@ -1,5 +1,41 @@
-title: Cayman theme
-description: Cayman is a clean, responsive theme for GitHub Pages.
-show_downloads: true
-google_analytics:
+# Description:
+#         Blog configuration file
+#         If changes are made, jekyll restart is needed
+# Author:
+#         Sergio Quijano Rey
+#         sergiquijano@gmail.com
+# Version:
+#         v1.0 - 30/03/2019: First documented version
+#         v1.1 - 31/03/2019: Default values are added
+
+# Site settings
+#===============================================================================
+title: Blog personal de Sergio Quijano Rey
+email: sergiquijano@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Bienvenido a mi pequeño blog personal! Como puedes ver, sigue en fase de 
+  desarrollo, y no tiene muchas cosas interesantes que puedas ver
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://sergioquijanorey.github.io"
+twitter_username: SergiQuijano
+github_username:  SergioQuijanoRey
+
+# Build settings
+#===============================================================================
+markdown: kramdown
 theme: jekyll-theme-cayman
+
+# Plugins
+#===============================================================================
+plugins:
+        - jekyll-feed
+
+# Default front-matter
+#===============================================================================
+defaults:
+        -
+                scope:
+                        path: ""
+                values:
+                        layout: default
+                        author: "Sergio Quijano Rey"
