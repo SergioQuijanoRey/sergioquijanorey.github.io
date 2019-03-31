@@ -22,7 +22,7 @@ github_username:  SergioQuijanoRey
 # Build settings
 #===============================================================================
 markdown: kramdown
-theme: cayman
+theme: jekyll-theme-cayman
 
 # Plugins
 #===============================================================================
