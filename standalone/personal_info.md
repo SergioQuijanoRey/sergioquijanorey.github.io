@@ -1,3 +1,4 @@
+---
 title: "Información personal"
 permalink: /personalinfo/
 ---
