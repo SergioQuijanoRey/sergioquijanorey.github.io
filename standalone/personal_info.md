@@ -1,6 +1,7 @@
 ---
 title: "Información personal"
 permalink: /personalinfo/
+layout: default
 ---
 
 # Información de contacto
