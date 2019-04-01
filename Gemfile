@@ -9,6 +9,7 @@ gem "minima", "~> 2.0"
 # Own plugins
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
+  gem "jekyll-theme-cayman"
 end
 
 # Windows related plugins
