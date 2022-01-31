@@ -1,7 +1,7 @@
 ---
 title: "Mi opinión de Julia como alternativa a Python"
 categories: linux programacion datascience machinelearning julia python
-date: 2022-01-31
+date: 2022-31-01
 ---
 
 Antes de empezar quiero decirte que este *post* está motivado por un directo que hice en [mi canal de Twitch](https://www.twitch.tv/sergioquijano) explorando este lenguaje de programación, como alternativa a *Python*. En concreto, me he querido centrar en su uso para proyectos de *Data Science / Machine Learning*, donde *Python* es el claro lenguaje predominante.
@@ -68,6 +68,171 @@ En este caso, hablaré sobre cuál ha sido mi camino para aprender lo básico so
     - Se puede leer de forma secuencial, pero es bastante más pesado (pero también mucho más profundo) que el anterior recurso
 
 # Lo bueno de Julia
+
+## Su sintáxis
+
+Como ya hemos comentado previamente, la sintáxis de *Julia* es muy sencilla y parecida a la de *Python*. Disponer de un lenguaje rápido, adecuado para ciertas tareas, con una sintáxis tan buena es maravilloso. Por poner un ejemplo, para computar la sucesión de Fibonacci basta con el siguiente código:
+
+~~~julia
+function fib(n::Int64) ::Int64
+    # Caso base
+    if n == 0 || n == 1
+        return 1
+    end
+
+    # Recurrencia
+    return fib(n-1) + fib(n-2)
+end
+~~~
+
+Si queremos adaptar este código recursivo para usar *memoization*, podemos hacer lo siguiente:
+
+~~~julia
+
+# posicion => valor en la posicion
+memoization = Dict()
+memoization[0] = 1
+memoization[1] = 1
+
+function fib(n::Int64) ::Int64
+    # Comprobamos si esta posicion ya la hemos calculado
+    if n ∈ keys(memoization)
+        return memoization[n]
+    end
+
+    # Computamos el valor y lo guardamos en nuestra tabla
+    value = fib(n-1) + fib(n-2)
+    memoization[n] = value
+
+    return value
+end
+~~~
+
+Como puedes ver, el código es muy parecido a lo que escribiríamos en *Python*. Las anotaciones de tipos, que es lo que parece distinguir más este código de un código escrito en *Python*, no son necesarias en este caso, siendo totalmente válido el siguiente código:
+
+~~~julia
+function fib(n)
+    # Caso base
+    if n == 0 || n == 1
+        return 1
+    end
+
+    # Recurrencia
+    return fib(n-1) + fib(n-2)
+end
+~~~
+
+Si estás más interesado en este código te recomiendo que veas el directo resubido, que es donde desarrollo dicho código. Es más, como ya he comentado, adapto en directo este código a código en *Python* en menos de un minuto.
+
+En una sección más avanzada del directo, ya trabajando con el proyecto de *machine learning*, escribo expresiones al igual que lo haría en *Python*, sin saber si funcionaría. Y efectivamente, funcionó. Por ejemplo, el siguiente código es válido:
+
+~~~julia
+x_train = [reshape(x_train[:,:, i], :) for i in 1:size(x_test)[3]]
+~~~
+
+donde estamos usando un constructo común en *Python* para formatear un conjunto de datos.
+
+## El uso de tipos
+
+En *Python* podemos (y creo que es una buena costumbre) usar anotación de tipos. Por ejemplo, podemos escribir el siguiente código *Python*:
+
+~~~python
+def f(x: int = 2)
+    return x * x
+~~~
+
+Estamos indicando que a la función deberíamos pasarle un entero. Sin embargo, nada nos impide que usemos cualquier otro tipo de parámetro. Esta anotación de tipos no es más que eso, una anotación como cualquier otro tipo de documentación. *Python* no va a comprobar nada sobre dichos tipos. Existen herramientas como [mypy](http://mypy-lang.org/) para asegurar el buen uso de los tipos, pero por lo que tengo entendido, no funciona con cualquier código de *Python*.
+
+Sin embargo, en *Julia*, si anotamos los tipos (cosa que no es necesaria, como ya hemos mostrado previamente), tendremos comprobaciones y recibiremos errores si no usamos correctamente los tipos:
+
+~~~julia
+function f(x::Int64)
+    return x*x
+end
+
+result = f(3.14)
+~~~
+
+Este código devuelve un error, aunque podríamos no haber anotado el tipo y el código funcionaría.
+
+El objetivo del uso de tipos no es directamente este, sino el de permitir *multiple dispatch*. Sin embargo, es una efecto colateral que personalmente me gusta. Considero que es positivo poder controlar los tipos de las funciones, aunque no sea necesario, para evitar problemas en el futuro, y para forzar diseños más adecuados.
+
+## Multiple Dispatch
+
+Ya lo hemos comentado previamente, pero podemos escribir código del siguiente modo:
+
+~~~julia
+function f(x::Int64)
+    return x*x
+end
+
+function f(x::Float64)
+    return x + x
+end
+
+value = f(3)   # Value es 9
+value = f(3.0) # Value es 6.0
+~~~
+
+Esto es algo común en otros lenguajes, como puede ser el caso de *Java*. Sin embargo, en *Julia*, al no disponer de programación orientada a objetos *"out of the box"*, usaremos mucho más estas caraterísticas para lograr ciertas funcionalidades deseadas. Por ejemplo, supongamos que tenemos una estructura `Persona`:
+
+~~~julia
+struct Persona
+    name::String
+    age::Int64
+end
+~~~
+
+De momento, solo disponemos del constructor por defecto, que toma los argumentos en orden. Por ejemplo, `sergio = Persona("Sergio", 22)`. Sin embargo, usando el *multiple dispatch* podemos definir una función con el mismo nombre pero con argumentos distintos. Por ejemplo:
+
+~~~julia
+function Persona(name::String) ::Persona
+    return Persona(name, 18)
+end
+~~~
+
+Sobre este tema, podríamos hablar largo y tendido, pero si quieres informarte más, te aconsejo que veas la parte del directo en la que exploro esto, y que consultes el *notebook* previamente citado (lo puedes encontrar [aquí](https://colab.research.google.com/github/ageron/julia_notebooks/blob/master/Julia_for_Pythonistas.ipynb))
+
+## El lenguaje no se va a interponer en tu camino
+
+Seré breve pues ya lo hemos comentado previamente. En *Python*, si en tu proyecto de *machine learning* te encuentras con un problema que tu librería (ya sea *tensorflow* o *pytorch*) no resuelve, tienes dos opciones:
+
+1. Escribir el algoritmo (potencialmente pesado a nivel computacional) en *Python*
+    - Si lo escribes de forma clara y fácil de leer, probablemente sea demasiado lento
+    - Si lo intentas optimizar con pequeños *trucos* o *hacks* para que no sea excesivamente lento, terminarás con un código críptico y difícil de leer. Con esto, pierde el sentido escribirlo en *Python*
+2. Escribirlo en un lenguaje rápido (ie. *C / C++*) y llamar a este código desde *Python*
+
+En *Julia* esto no pasa. El lenguaje es lo suficientemente rápido como para poder correr algoritmos pesados, gracias a la compilación *Just in Time*. Esto, teóricamente (recalco aquí que no he trabajado lo suficiente con el lenguaje) evitará el ciclo "escribo la idea en *Python*, veo que funciona, así que lo re-escribo en un lenguaje rápido para tener una versión final que llamaré desde otro lenguaje como el mismo *Python*"
+
+Gracias a esto muchas librerías como *Flux.jl* están escritas completamente en *Julia*. Si quieres hacer un pequeño *"hack"* en tu proyecto, o si quieres contribuir a la librería, no necesitarás usar otro lenguaje.
+
+## Puedes llamar fácilmente a código de *Python*
+
+Algo que no cubro en el directo, y que realmente me parece positivo, es la facilidad con la que podemos llamar a código de *Python*. Por ejemplo:
+
+~~~julia
+using PyCall
+os = pyimport("os")
+path = os.path.join("pruebas", "mas_pruebas")
+println(path) # "pruebas/mas_pruebas"
+~~~
+
+Por tanto, si necesitas usar partes específicas de *Python*, en teoría deberías poder sin demasiados problemas.
+
+## El gestor de paquetes
+
+Para acceder al gestor de paquetes basta con lanzar la *shell* de *Julia* `julia` y pulsar la tecla `]`, entrando en modo paquetes. Una vez hecho esto, podemos añadir un paquete con la orden `add Flux`, por ejemplo.
+
+Si queremos crear un entorno virtual, dentro del modo paquete podemos usar la orden `activate .`. Creará un entorno si no existe previamente, y si existe lo cargará. A partir de este momento podremos usar ordenes como la de instalación de paquetes para gestionar el entorno. Además, se crearán dos archivos `.toml` que reflejarán el estado del proyecto. Estos ficheros los podemos colocar en `git`, haciendo que nuestro entorno sea fácilmente reproducible.
+
+Me gustaría poder hacer esto sin tener que entrar en la *shell* de *Julia*, por ejemplo hacer algo como `julia --add_pkg Flux`. Sin embargo, esto no debe ser difícil de programar, pues podemos realizar todas las órdenes de paquetes desde un *script* de *Julia*, por ejemplo:
+
+~~~julia
+import Pkg
+Pkg.add("Flux")
+~~~
+
+Y con esto debería ser sencillo crear una herramienta para realizar lo anteriormente descrito. El hecho de poder gestionar los paquetes desde código *Julia* me parece algo muy positivo.
 
 # Lo malo de Julia
 
