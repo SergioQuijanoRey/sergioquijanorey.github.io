@@ -1,7 +1,7 @@
 ---
 title: "Mi opinión de Julia como alternativa a Python"
 categories: linux programacion datascience machinelearning julia python
-date: 2022-31-01
+date: 2022-01-31
 ---
 
 Antes de empezar quiero decirte que este *post* está motivado por un directo que hice en [mi canal de Twitch](https://www.twitch.tv/sergioquijano) explorando este lenguaje de programación, como alternativa a *Python*. En concreto, me he querido centrar en su uso para proyectos de *Data Science / Machine Learning*, donde *Python* es el claro lenguaje predominante.
