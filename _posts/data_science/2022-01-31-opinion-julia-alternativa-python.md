@@ -89,7 +89,7 @@ Si queremos adaptar este código recursivo para usar *memoization*, podemos hace
 
 ~~~julia
 
-# posicion => valor en la posicion
+# Diccionario que sirve para la memoizacion
 memoization = Dict()
 memoization[0] = 1
 memoization[1] = 1
@@ -235,5 +235,75 @@ Pkg.add("Flux")
 Y con esto debería ser sencillo crear una herramienta para realizar lo anteriormente descrito. El hecho de poder gestionar los paquetes desde código *Julia* me parece algo muy positivo.
 
 # Lo malo de Julia
+
+## Lentitud
+
+¿Cómo digo esto, si llevo todo el *blog* hablando de la rapidez de *Julia*? Pues lo fundamental aquí es comprender cómo *Julia* consigue ser tan rápido a la vez que dinámico.
+
+Antes desarrollar nada, quiero recalcar que no conozco en detalle las técnicas de las que voy a hablar, solamente las ideas generales de dichas técnicas. Por tanto, puedo cometer errores al explicar dichas técnicas, aunque las ideas generales deberían ser correctas.
+
+El truco es el uso de una técnica conocida como *Just in Time (JIT) compilation*. Antes de explicar en qué consiste, veamos las dos alternativas a dicha técnica:
+
+1. Lenguaje dinámico, como es el caso de *Python*. En estos lenguajes, las órdenes de alto nivel van llegando de una en una (o en bloques). Se traducen a lenguaje máquina y se ejecutan
+2. Lenguaje compilado, como puede ser *C++*. En este caso, todo el código se traduce a lenguaje máquina antes de poder ejecutarse. Una vez disponemos de todo el programa en lenguaje máquina (el binario), ejecutamos dicho lenguaje máquina
+
+En el caso de *JIT*, las instrucciones van llegando una a una o en bloques. Antes de ser ejecutadas, se compilan y normalmente se almacena el resultado de la compilación. Con esto se ejecutan. Si se puede re-aprovechar la compilación de un bloque de código (ie. el código que se ejecuta en un bloque `for`), no se repite la compilación, sino que se aprovecha.
+
+Esto provoca los siguientes efectos:
+
+1. La primera vez que llega una instrucción o bloque, tardaremos más en ejecutarlo que en un lenguaje dinámico, pues realizamos el proceso de compilación
+2. Sin embargo, las siguientes veces que se repita el código, la ejecución será más rápida. Prácticamente a la misma velocidad que en lenguajes compilados
+
+Por ejemplo en un bucle `for`:
+
+- La primera iteración será más lenta que en un lenguaje dinámico
+- Sin embargo, las posteriores ejecuciones serán muchísimo más rápidas que en un lenguaje dinámico
+
+Hasta aquí todo bien. El pequeño *overhead* inicial debería ser compensado por las veces que repetimos ciertos cómputos pesados. El **problema** que me he encontrado principalmente es a la hora de **importar una librería**. Esto puede verse claramente en el directo resubido.
+
+Esto que digo puede ser incierto, pues no he investigado lo suficiente. Pero a mi entender, el problema es que a la hora de importar una librería, pre-compilamos dicha librería (esto lo pienso por los mensajes que obtenemos al hacer `add` de las librerías).
+
+Esto que digo se ve respaldado en esta pregunta en [*StackOverFlow*](https://stackoverflow.com/questions/49635221/speeding-up-package-load-in-julia) y en el [foro oficial de Julia](https://discourse.julialang.org/t/extremely-slow-execution-time/11095). Así que no parece ser un problema que solamente yo tenga. En ambos casos se proponen algunas soluciones:
+
+1. Mantener las sesiones vivas el máximo tiempo posible. Ya sea que estemos usando la *shell* interactiva o un *notebook* como *Jupyter*
+2. Usar algún paquete que se encargue de evitar recompilar las librerías una y otra vez. Por ejemplo, [Revise.jl](https://github.com/timholy/Revise.jl)
+
+La primera alternativa no me gusta, pues no es factible a la hora de escribir código en un editor de texto. Estaríamos obligados a escribir código en un *notebook* como *Jupyter* (cosa que hago en el directo, identificando correctamente el problema con los tiempos de ejecución) o en una *shell*.
+
+Estoy seguro de que el equipo de desarrolladores estará trabajando en solucionar este problema.
+
+## Documentación insuficiente
+
+Este es un problema prácticamente inevitable, al ser *Julia* un lenguaje tan nuevo. En el directo se puede ver cómo hago búsquedas sobre ejemplos para resolver el conjunto de datos *MNIST*, y los resultados que obtengo no son de muy buena calidad. Sin embargo, realizar la misma búsqueda para alguna librería de *Python* seguramente arrojará más resultados, de mayor calidad. Simplemente por disponer de una comunidad mucho más grande que ha generado contenido durante más tiempo.
+
+No es algo de lo que pueda culpar a *Julia*. Como ya he dicho, es inevitable. Además, la solución pasa por esperar cierto tiempo a que la comunidad crezca y genere más y mejor contenido sobre el lenguaje.
+
+Sin embargo, la documentación oficial si que me parece en cierta medida insuficiente. En el mismo directo, realizo una búsqueda sobre el tipo de datos *diccionario* en la documentación oficial. Lo encuentro pero no es fácilmente indexable, pues aparece mezclado con otros tipos de datos. Además, no tengo un índice con los métodos del tipo de dato, pues el índice muestra el resto de tipos de dato que aparecen junto al diccionario. Compruébalo tu mismo en la [documentación oficial](https://docs.julialang.org/en/v1/base/collections/), que es lo que a día de hoy me aparece al realizar la búsqueda *julia dictionary*.
+
+Esto sí que puede mejorarse a día de hoy. Un buen ejemplo a seguir es la magnífica documentación de *Rust*. Por ejemplo, la documentación oficial sobre el tipo de dato *HashMap* se puede encontrar [aquí](https://doc.rust-lang.org/std/collections/struct.HashMap.html), bien indexada y accesible.
+
+## El compilador no es muy claro
+
+De nuevo tomaremos como referente el compilador de *Rust*, que es magnífico. Los errores son claros, bien documentados e incluso proponiendo buenas soluciones. En [este post](https://dmerej.info/blog/post/letting-the-compiler-tell-you-what-to-do/) se puede apreciar a lo que me refiero.
+
+Por parte de *Julia*, los errores con los que me he encontrado no me han parecido tan claros de leer (como puede verse a lo largo del directo). Por ejemplo, si accedemos a una estructura de datos usando el índice 0 (en *Julia* tenemos *1-indexing*) obtenemos el siguiente error:
+
+~~~julia
+ERROR: KeyError: key 0 not found
+Stacktrace:
+ [1] getindex(h::Dict{Any, Any}, key::Int64)
+   @ Base ./dict.jl:481
+ [2] top-level scope
+   @ REPL[5]:1
+~~~
+
+En este caso, el error es muy sencillo y leyéndolo seguramente sepa identificar el problema. Sin embargo, y siguiendo este simple ejemplo, observemos:
+
+1. No propone una solución al problema, como hace *Rust* en múltiples ocasiones. En este caso, sería fácil que el compilador, a sabiendas de que estamos usando *0-indexing* en un lenguaje *1-indexing*, podría informarnos de esto de forma clara y en un lenguaje sencillo
+2. El *StackTrace* es algo ilegible
+
+Hacia el final del directo puedes ver que me encuentro con un problema con las dimensiones de las matrices con las que estoy trabajando (un problema no tan trivial como el que he presentado previamente). Puedes comprobar que el error apenas me ayuda a identificar su fuente. Y además, el *StackTrace* es tan largo e irrelevante que oculta lo realmente útil en el error. Creo que, en ese caso en concreto, el problema se ve agravado al mostrar el *stacktrace* de la macro que estaba usando.
+
+Sin embargo, todo lo que he dicho hay que cogerlo con pinzas. Estoy comparando un lenguaje compilado, estrictamente tipado y no dinámico con un lenguaje dinámico, no estrictamente tipado y con *JIT*. Puede ser (no estoy seguro de esto pues no conozco en detalle los procesos de compilación) que *Rust*, en su compilación, tenga más información global con la que detectar e informar de problemas. Mientras que *Julia*, al compilar bloque a bloque, puede que no tenga tanta información y que muestre lo mejor que puede detectar.
 
 # Conclusiones
