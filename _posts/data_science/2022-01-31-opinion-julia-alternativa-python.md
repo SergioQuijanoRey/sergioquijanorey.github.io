@@ -307,3 +307,25 @@ Hacia el final del directo puedes ver que me encuentro con un problema con las d
 Sin embargo, todo lo que he dicho hay que cogerlo con pinzas. Estoy comparando un lenguaje compilado, estrictamente tipado y no dinámico con un lenguaje dinámico, no estrictamente tipado y con *JIT*. Puede ser (no estoy seguro de esto pues no conozco en detalle los procesos de compilación) que *Rust*, en su compilación, tenga más información global con la que detectar e informar de problemas. Mientras que *Julia*, al compilar bloque a bloque, puede que no tenga tanta información y que muestre lo mejor que puede detectar.
 
 # Conclusiones
+
+Por todo lo dicho en este *post*, mis conclusiones son las siguientes:
+
+1. Si trabajas con *Python* en proyectos de *Data Science* o *Machine Learning*, al menos echa un vistazo a este lenguaje
+    - Aprender este lenguaje no debería costarte demasiado con los recursos que te he mostrado
+    - La comunidad en estos ámbitos es muy buena y estoy seguro de que van a desarrollar herramientas excelentes que te facilitarán tu trabajo en el futuro
+    - Siempre puedes llamar código *Python* desde *Julia*
+    - Escribe tus algoritmos pesados, que siempre has querido escribir en *Python* pero que no has podido por su lentitud, en *Julia*
+2. Si trabajas en algún área científica, aprende *Julia*
+    - Aunque en el *post* no hemos hablado demasiado de ello, si estás acostumbrado a usar *mathematica*, *matlab*, *R* o similares, considera usar este lenguaje
+    - Está igualmente capacitado para realizar tareas científicas, con una buena notación matemática. Y además, me parece más sencillo escribir código para otros ámbitos (como crear una página web) con este lenguaje que con los anteriormente mencionados
+    - De hecho, este es un punto fuerte de *Python*, ser capaz de entrenar un modelo de *machine learning* y, con el mismo lenguaje, publicar tus resultados en una página web
+    - De hecho, si esto último te interesa, consulta los recursos que se ofrecen en esta [pregunta en el foro oficial](https://discourse.julialang.org/t/can-i-build-webpages-and-especially-dashboards-in-julia/10913)
+3. El lenguaje no es del todo maduro, aunque poco le falta
+    - Principalmente, la falta de una comunidad grande, de una buena documentación, de suficientes ejemplos sobre problemas a resolver concretos, de buenos mensajes de error, y de problemas con la carga de librerías, hace que piense que el lenguaje no esté del todo preparado para un entorno de producción
+    - Sin embargo, una sintaxis excelente, un gestor de paquetes muy sólido, librerías realmente buenas (como *Flux.jl*) y una comunidad sana y especializada me hacen pensar que en pocos años conseguirá estar a un nivel más que aceptable
+4. Lenguaje muy centrado en computación numérica
+    - Teniendo en cuenta *Python*, esto puede ser a la vez bueno y a la vez malo
+    - Al estar centrado en computación numérica, parece ser una herramienta mucho más adecuada para ciertas tareas, como proyectos de *machine learning*
+    - Sin embargo, algo que hace realmente grande a *Python* es su ubicuidad. Tiene paquetes muy buenos para absolutamente cualquier tarea. Desde *machine learning*, hasta *frameworks web*, hasta para programar una *raspberry* para que riegue automáticamente tus plantas
+    - Estoy seguro de que *Julia* no es, en principio, incapaz de realizar estas tareas. Sin embargo, no sé si la comunidad llegará a realizar paquetes para tareas tan diversas sabiendo que actualmente está muy cerrada en campos muy concretos
+5. Da igual todo lo que he dicho previamente. Si te gusta la programación y probar nuevos lenguajes, dale un intento. Me ha parecido un lenguaje muy cómodo y divertido que no me ha dado demasiados problemas (en contraste a otros lenguajes, como puede ser el ya mencionado *Rust*, que requiere una inversión en tiempo enorme antes de poder empezar a ser productivos con el lenguaje)
