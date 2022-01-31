@@ -69,9 +69,9 @@ En este caso, hablaré sobre cuál ha sido mi camino para aprender lo básico so
 
 # Lo bueno de Julia
 
-## Su sintáxis
+## Su sintaxis
 
-Como ya hemos comentado previamente, la sintáxis de *Julia* es muy sencilla y parecida a la de *Python*. Disponer de un lenguaje rápido, adecuado para ciertas tareas, con una sintáxis tan buena es maravilloso. Por poner un ejemplo, para computar la sucesión de Fibonacci basta con el siguiente código:
+Como ya hemos comentado previamente, la sintaxis de *Julia* es muy sencilla y parecida a la de *Python*. Disponer de un lenguaje rápido, adecuado para ciertas tareas, con una sintaxis tan buena es maravilloso. Por poner un ejemplo, para computar la sucesión de Fibonacci basta con el siguiente código:
 
 ~~~julia
 function fib(n::Int64) ::Int64
@@ -174,7 +174,7 @@ value = f(3)   # Value es 9
 value = f(3.0) # Value es 6.0
 ~~~
 
-Esto es algo común en otros lenguajes, como puede ser el caso de *Java*. Sin embargo, en *Julia*, al no disponer de programación orientada a objetos *"out of the box"*, usaremos mucho más estas caraterísticas para lograr ciertas funcionalidades deseadas. Por ejemplo, supongamos que tenemos una estructura `Persona`:
+Esto es algo común en otros lenguajes, como puede ser el caso de *Java*. Sin embargo, en *Julia*, al no disponer de programación orientada a objetos *"out of the box"*, usaremos mucho más estas características para lograr ciertas funcionalidades deseadas. Por ejemplo, supongamos que tenemos una estructura `Persona`:
 
 ~~~julia
 struct Persona
